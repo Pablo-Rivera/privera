@@ -1,0 +1,17 @@
+
+.sin-extras li
+  {
+    list-style-type: none;
+    font-size: 20px;
+  }
+
+ul li a
+  {
+  	color: #197078;
+  }
+.posicion_nav
+  {
+  	float: left;
+  	padding-right: 50px;
+  	padding-left: 50px;
+  }
