@@ -1,18 +1,43 @@
 
-.sin-extras li
+  header
   {
+    background-color: #e3e55e;
+    height:25px;
+    margin-top: -16px;
+  }
+  nav{
+    background-color: #ad5de3;
+    height:25px;
+    margin-top: -16px;
+  }
+  nav ul li
+  {
+  	float: left;
+  	padding-right: 20px;
+  	padding-left: 20px;
     list-style-type: none;
     font-size: 20px;
   }
 
-ul li a
+  nav ul a
   {
     text-decoration: none;
-  	color: #197078;
+  	color: #2b7819;
   }
-.posicion_nav
-  {
-  	float: left;
-  	padding-right: 50px;
-  	padding-left: 50px;
+  ul a:hover {
+  	color: #e61050;
+  }
+  ul a:hover li {
+  	background-color: blue;
+  	border-color: #d3cee0;
+  }
+  article {
+    background-color: #31a3a0;
+    height:800px;
+    margin-top: -19px;
+  }
+  thead{color:green;}
+  tbody{color:blue;}
+  table, th, td{
+    border:1px solid black;
   }
