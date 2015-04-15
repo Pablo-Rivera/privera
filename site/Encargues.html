@@ -12,14 +12,15 @@
     <nav>
       <ul>
         <a href="../index.html"><li>Home</li></a>
-        <a href="../index.html"><li>Postres</li></a>
-        <a href="../index.html"><li>Sabores</li></a>
-        <a href="../index.html"><li>Encargues</li></a>
+        <a href="Postres.html"><li>Postres</li></a>
+        <a href="Sabores.html"><li>Sabores</li></a>
+        <a href="Encargues.html"><li>Encargues</li></a>
         <a href="../index.html"><li>La Empresa</li></a>
         <a href="../index.html"><li>Contacto</li></a>
       </ul>
     </nav>
     <article>
+		<h1>Encargues</h1>
       <section>
         <h1>Precios por cantidad</h1>
         <table>
@@ -67,7 +68,7 @@
           </tbody>
           <tbody>
             <tr>
-              <td>casatas</td>
+              <td>Bombones</td>
               <td>100 < 200</td>
               <td>18$</td>
             </tr>
@@ -77,12 +78,13 @@
       </section>
       <section>
         <h1>Planilla de encargues</h1>
-        <form>
-          <label>Nombre: <input name="name" type="text"></label><br><br>
-          <label>Apellido: <input name="name" type="text"></label><br><br>
-          <label>Direccion:  <input name="name" type="text"></label><br><br>
-          <label>Telefono: <input name="name" type="text"></label><br><br>
-          <label>Pedido: <input name="name" type="text"></label><br><br>
+        <form><br>
+          Nombre: <input name="name" type="text" placeholder="Carlos" required> *<br><br>
+          Apellido: <input name="name" type="text" placeholder="Sanchez" required>*<br><br>
+          Direccion:  <input name="name" type="text" placeholder="9 de julio 513" required>*<br><br>
+          Telefono: <input name="name" type="text" placeholder="420659" required>*<br><br>
+          Pedido: <textarea name="message" cols="60" rows="6" required></textarea>*<br><br>
+		  <input type="submit" value="enviar">
         </form>
       </section>
     </article>
