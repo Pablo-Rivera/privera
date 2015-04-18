@@ -1,11 +1,19 @@
   body{
-    background-color: #012b26;
+    background-color: #a0e6e6;
   }
   header
   {
-    background-color: #e3e55e;
-    height:25px;
-    margin-top: -16px;
+    margin:auto;
+    background-color: #a0e6e6;
+    height:100px;
+    width:674px;
+  }
+  header img{
+    float:left;
+    margin-left:14%;
+    height:90%;
+    border-radius: 50px;
+    border: 2px solid #5885c0;
   }
   nav{
     background-color: #ad5de3;
@@ -42,6 +50,7 @@
   }
   /*--------------------------------*/
   /*----------Encargue--------------*/
+
   article h1{
 	text-align: center;
   font-size:30px;
@@ -51,11 +60,12 @@
 	margin: 18px auto auto;
 	height: 220px;
 	width: 300px;
-	border: 3px solid #326000;
+  border-radius:15px;
 	background-color: orange;
   }
   th ,td{
 	text-align: center;
+  border-radius:15px;
   font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
   }
   form{
@@ -66,7 +76,6 @@
 	border: 3px solid #326000;
 	border-radius: 10px;
 	background-color: orange;
-	box-shadow: 0px 5px 10px #3d8e00;
   }
 
   thead{
