@@ -1,4 +1,6 @@
-
+  body{
+    background-color: #012b26;
+  }
   header
   {
     background-color: #e3e55e;
@@ -7,8 +9,11 @@
   }
   nav{
     background-color: #ad5de3;
-    height:24px;
-    margin-top: -16px;
+    height:27px;
+  }
+  nav ul{
+    margin:auto;
+    width:674px;
   }
   nav ul li
   {
@@ -17,6 +22,7 @@
   	padding-left: 20px;
     list-style-type: none;
     font-size: 20px;
+    border: 1px solid #901326;
   }
 
   nav ul a
@@ -24,22 +30,22 @@
     text-decoration: none;
   	color: #2b7819;
   }
-  ul a:hover {
-  	color: #e61050;
-  }
-  ul a:hover li {
-  	background-color: blue;
-  	border-color: #d3cee0;
+  nav ul a:hover li {
+    color: #e61050;
+  	background-color: #31135a;
+    border: 1px solid #b9b22d;
   }
   article {
     background-color: #31a3a0;
-    height:800px;
-    margin-top: -20px;
+    height:100%;
+    margin-top: -25px;
   }
   /*--------------------------------*/
   /*----------Encargue--------------*/
-  section h1{
+  article h1{
 	text-align: center;
+  font-size:30px;
+  font-family:inherit;
   }
   table{
 	margin: 18px auto auto;
@@ -50,10 +56,11 @@
   }
   th ,td{
 	text-align: center;
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
   }
   form{
 	font-weight: bold;
-	margin: 18px auto auto;
+	margin: auto auto;
 	height: 380px;
 	width: 550px;
 	border: 3px solid #326000;
@@ -61,9 +68,26 @@
 	background-color: orange;
 	box-shadow: 0px 5px 10px #3d8e00;
   }
-  thead{color:green;}
-  tbody{color:blue;}
+
+  thead{
+    color:green;
+  }
+
+  tbody{
+    color:blue;
+  }
+
   table, th, td{
     border:1px solid black;
+  }
+  form input, textarea{
+    margin-left:15px;
+    margin-top:1px;
+    margin-bottom:1px;
+  }
+  form p{
+    margin-left:20px;
+    margin-top:5px;
+    margin-bottom:1px;
   }
   /*--------------------------------*/
