@@ -1,10 +1,9 @@
   body{
-    background-color: #a0e6e6;
+    background: linear-gradient(to right, #4cf2f2,#31a3a0,#4cf2f2);
   }
   header
   {
     margin:auto;
-    background-color: #a0e6e6;
     height:100px;
     width:674px;
   }
@@ -13,10 +12,9 @@
     margin-left:14%;
     height:90%;
     border-radius: 50px;
-    border: 2px solid #5885c0;
+    border: 2px solid #174b86;
   }
   nav{
-    background-color: #ad5de3;
     height:27px;
   }
   nav ul{
@@ -28,23 +26,24 @@
   	float: left;
   	padding-right: 20px;
   	padding-left: 20px;
+    background: linear-gradient(to top, #5885c0,#a0e6e6,#5885c0);
     list-style-type: none;
     font-size: 20px;
-    border: 1px solid #901326;
+    border: 1px solid #003e85;
+    border-radius: 20px;
   }
 
   nav ul a
   {
     text-decoration: none;
-  	color: #2b7819;
+  	color: #054691;
   }
   nav ul a:hover li {
-    color: #e61050;
-  	background-color: #31135a;
-    border: 1px solid #b9b22d;
+    color: #82ded5;
+    background: linear-gradient(to top, #a0e6e6,#5885c0,#a0e6e6);
+    border: 1px solid #a0e6e6;
   }
   article {
-    background-color: #31a3a0;
     height:100%;
     margin-top: -25px;
   }
@@ -100,3 +99,42 @@
     margin-bottom:1px;
   }
   /*--------------------------------*/
+  /*----------SABORES-------------*/
+  section ul{
+    margin:auto;
+    width:674px;
+  }
+  section ul li{
+    font-size:20px;
+  }
+  .ulestatic{
+    position: fixed;
+    list-style-type: none;
+    margin-top:-20px;
+  }.ulestatic li{
+    font-size:20px;
+    text-align: center;
+    height:50px;
+    width:110px;
+    border-radius:20px;
+  }
+  .crema{
+    background-image: url(crema.jpg);
+    background-repeat: no-repeat;
+    background-position: 0px center;
+  }
+  .dulcedeleche{
+    background-image: url(dulcedeleche.jpg);
+    background-repeat: no-repeat;
+    background-position: 0px center;
+  }
+  .chocolate{
+    background-image: url(chocolate.jpg);
+    background-repeat: no-repeat;
+    background-position: 0px center;
+  }
+  .frutas{
+    background-image: url(frutilla.jpg);
+    background-repeat: no-repeat;
+    background-position: 0px center;
+  }
