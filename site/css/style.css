@@ -35,7 +35,7 @@
     border-radius: 20px;
   }
 
-  nav ul a
+  a
   {
     text-decoration: none;
   	color: #054691;
@@ -45,12 +45,9 @@
     background: linear-gradient(to top, #a0e6e6,#5885c0,#a0e6e6);
     border: 1px solid #a0e6e6;
   }
-  article {
-    height:100%;
-  }
   /*--------------------------------*/
   /*----------Encargue--------------*/
-  .descripcion{
+  .sabenc{
     margin:auto;
     width:674px;
   }
@@ -60,7 +57,7 @@
   font-family:inherit;
   }
   table{
-	margin: 18px auto auto;
+	margin: 18px auto 18px auto;
 	height: 220px;
 	width: 300px;
   border-radius:15px;
@@ -73,14 +70,14 @@
   font-weight: bold;
   }
   form{
-	font-weight: bold;
-	margin: auto auto;
-  color:#026D6D;
-	height: 380px;
-	width: 550px;
-	border: 3px solid #003e85;
-	border-radius: 10px;
-	background-color: #9FFAFA;
+  	font-weight: bold;
+  	margin:18px auto 18px auto;
+    color:#026D6D;
+  	height: 380px;
+  	width: 550px;
+  	border: 3px solid #003e85;
+  	border-radius: 10px;
+  	background-color: #9FFAFA;
   }
 
   thead{
@@ -113,32 +110,28 @@
   /*----------SABORES-------------*/
   h1{
     color:#04504e;
+    margin:auto ;
+    height:35px;
+    background:#377FD9;
   }
   ul li h2{
-    width: 80%;
+    width: 100%;
     color: #2152b9;
     font-weight: 400;
     font-size: 18px;
     text-transform: uppercase;
-    margin-bottom: 2px;
+    margin-left:5px;
+    margin-bottom: -5px;
     font-family: "AndralisNDOsF-Bold";
   }
-  ul li p{
-    width: 80%;
+  .sabenc ul li p{
+    width: 100%;
     font-size: 12px;
     color: #026D6D;
     text-transform: uppercase;
     font-family: "AndralisNDOsF-Bold";
-    margin: 0px;
-    padding: 0px;
-    border: 0px none;
-    outline: 0px none;
   }
-  section ul{
-    margin:auto;
-    width:674px;
-  }
-  section ul li{
+  section.sabenc ul li{
     font-size:20px;
   }
   ul.estatic{
@@ -146,7 +139,7 @@
     margin-top:-20px;
   }
   ul.estatic a{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "AndralisNDOsF-Bold";
     font-weight: bold;
     color:#2152b9;
     text-decoration: none;
@@ -155,10 +148,9 @@
     color:#1a06b9;
     text-shadow: 1px 1px #e9f1f4;
     margin-left:15px;
-    border: 2px solid #d122ec;
   }
   ul.estatic li{
-    font-size:20px;
+    font-size:22px;
     text-align: center;
     height:50px;
     width:110px;
@@ -179,6 +171,34 @@
   ul.estatic a:hover li.frutas{
     background-image: url(frutilla.jpg);
   }
+  /*----------Postres-------------*/
+  article.postre{
+    height:814px;
+    overflow: scroll;
+    overflow-x: hidden;
+    margin-left:11%;
+  }
+  div{
+    float:left;
+    margin:1% 5%;
+    height:330px;
+    width:300px;
+    border-radius:20px;
+    border: 2px solid #003e85;
+  }
+  div img{
+    float:left;
+    margin:-2px;
+    width:100%;
+    border-radius:20px;
+    border:2px solid #003e85;
+  }
+  div p.postres{
+    color:#065d5a;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left:5px;
+  }
 
   /*----------FOOTER-------------*/
   Footer{
@@ -193,7 +213,7 @@
     list-style-type: none;
     font-size: 16px;
     margin: auto auto;
-    float: left;
+    float: right;
     padding-right: 20px;
     margin-top: -14px;
     font-family: arial, "verdana", sans-serif;
