@@ -21,13 +21,15 @@
     margin:auto;
     width:674px;
   }
+  li{
+    list-style-type: none;
+  }
   nav ul li
   {
   	float: left;
   	padding-right: 20px;
   	padding-left: 20px;
     background: linear-gradient(to top, #5885c0,#a0e6e6,#5885c0);
-    list-style-type: none;
     font-size: 20px;
     border: 1px solid #003e85;
     border-radius: 20px;
@@ -45,11 +47,13 @@
   }
   article {
     height:100%;
-    margin-top: -25px;
   }
   /*--------------------------------*/
   /*----------Encargue--------------*/
-
+  .descripcion{
+    margin:auto;
+    width:674px;
+  }
   article h1{
 	text-align: center;
   font-size:30px;
@@ -60,29 +64,31 @@
 	height: 220px;
 	width: 300px;
   border-radius:15px;
-	background-color: orange;
+	background-color: #9FFAFA;
   }
   th ,td{
 	text-align: center;
   border-radius:15px;
   font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: bold;
   }
   form{
 	font-weight: bold;
 	margin: auto auto;
+  color:#026D6D;
 	height: 380px;
 	width: 550px;
-	border: 3px solid #326000;
+	border: 3px solid #003e85;
 	border-radius: 10px;
-	background-color: orange;
+	background-color: #9FFAFA;
   }
 
   thead{
-    color:green;
+    color:#2152b9;
   }
 
   tbody{
-    color:blue;
+    color:#026D6D;
   }
 
   table, th, td{
@@ -98,8 +104,36 @@
     margin-top:5px;
     margin-bottom:1px;
   }
+  input.der{
+    margin-right:20px;
+    margin-top:5px;
+    float:right;
+  }
   /*--------------------------------*/
   /*----------SABORES-------------*/
+  h1{
+    color:#04504e;
+  }
+  ul li h2{
+    width: 80%;
+    color: #2152b9;
+    font-weight: 400;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+    font-family: "AndralisNDOsF-Bold";
+  }
+  ul li p{
+    width: 80%;
+    font-size: 12px;
+    color: #026D6D;
+    text-transform: uppercase;
+    font-family: "AndralisNDOsF-Bold";
+    margin: 0px;
+    padding: 0px;
+    border: 0px none;
+    outline: 0px none;
+  }
   section ul{
     margin:auto;
     width:674px;
@@ -107,34 +141,60 @@
   section ul li{
     font-size:20px;
   }
-  .ulestatic{
+  ul.estatic{
     position: fixed;
-    list-style-type: none;
     margin-top:-20px;
-  }.ulestatic li{
+  }
+  ul.estatic a{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color:#2152b9;
+    text-decoration: none;
+  }
+  ul.estatic a:hover li{
+    color:#1a06b9;
+    text-shadow: 1px 1px #e9f1f4;
+    margin-left:15px;
+    border: 2px solid #d122ec;
+  }
+  ul.estatic li{
     font-size:20px;
     text-align: center;
     height:50px;
     width:110px;
     border-radius:20px;
+    border: 2px solid #003e85;
+    background-repeat: no-repeat;
+    background-position: 0px center;
   }
-  .crema{
+  ul.estatic a:hover li.crema{
     background-image: url(crema.jpg);
-    background-repeat: no-repeat;
-    background-position: 0px center;
   }
-  .dulcedeleche{
+  ul.estatic a:hover li.dulcedeleche{
     background-image: url(dulcedeleche.jpg);
-    background-repeat: no-repeat;
-    background-position: 0px center;
   }
-  .chocolate{
+  ul.estatic a:hover li.chocolate{
     background-image: url(chocolate.jpg);
-    background-repeat: no-repeat;
-    background-position: 0px center;
   }
-  .frutas{
+  ul.estatic a:hover li.frutas{
     background-image: url(frutilla.jpg);
-    background-repeat: no-repeat;
-    background-position: 0px center;
+  }
+
+  /*----------FOOTER-------------*/
+  Footer{
+    border: 2px solid #003e85;
+    color:#026D6D;
+    margin: auto auto;
+    height: 22px;
+    margin-top: 10px;
+    border-radius: 10px;
+  }
+  Footer li{
+    list-style-type: none;
+    font-size: 16px;
+    margin: auto auto;
+    float: left;
+    padding-right: 20px;
+    margin-top: -14px;
+    font-family: arial, "verdana", sans-serif;
   }
