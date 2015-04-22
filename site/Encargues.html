@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+		<meta charset="UTF-8">
     <title>Encargues-Los Andes</title>
     <link rel="shortcut icon" href="images/logo.png" type="image/png" />
     <link rel="stylesheet" href="css/style.css">
@@ -73,9 +74,13 @@
         <form>
           <p>Nombre: </p><input name="name" type="text" placeholder="Carlos" required>(*)
           <p>Apellido: </p><input name="name" type="text" placeholder="Sanchez" required>(*)
+          <p>Tarjeta Devito o Credito:</p> <input id="numtarjeta" name="numtarjeta" type="number" placeholder="5555-4444-3333-2222" required>
+          Visa<input type="radio" name="tarjeta" value="Visa"/>
+          MasterCard<input type="radio" name="tarjeta" value="MasterCard"/>
+          Efectivo<input type="radio" name="tarjeta" value="Efectivo"/>(*)<br>
           <p>Direccion: </p><input name="name" type="text" placeholder="9 de julio 513" required>(*)
           <p>Telefono: </p><input name="name" type="text" placeholder="420659" required>(*)
-          <p>Pedido: </p><textarea name="message" cols="55" rows="6" required></textarea>(*)<br>
+          <p>Pedido: </p><textarea name="message" cols="55" rows="5" required></textarea>(*)<br>
 		      <input class="der" type="submit" value="enviar">
         </form>
       </section>

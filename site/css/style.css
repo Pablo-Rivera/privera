@@ -45,7 +45,47 @@
     background: linear-gradient(to top, #a0e6e6,#5885c0,#a0e6e6);
     border: 1px solid #a0e6e6;
   }
-  /*--------------------------------*/
+  /*------------Home---------------*/
+  article.home{
+    height:800;
+  }
+  div.bienvenida{
+    margin-left:24%;
+    margin-bottom:1%;
+    border:none;
+    width:75%;
+    height:100px;
+  }
+  div.bienvenida h2::first-letter {
+    color: #054691;
+    font-weight: bold;
+  }
+  div.bienvenida h2{
+    border-right: 2px solid #003e85;
+    padding-right:1%;
+    font-weight: normal;
+    color: #9120a7;
+    float:left;
+  }
+  div.bienvenida p{
+    padding-left:2%;
+    height:50px;
+    width:65%;
+    float:left;
+  }
+  div.promos{
+    float:left;
+    margin:1% 1%;
+    height:550px;
+    width:550px;
+    border-radius:20px;
+    border: 2px solid #003e85;
+  }
+  div.promos img{
+    width:100%;
+    border-radius:18px;
+  }
+
   /*----------Encargue--------------*/
   .sabenc{
     margin:auto;
@@ -73,7 +113,7 @@
   	font-weight: bold;
   	margin:18px auto 18px auto;
     color:#026D6D;
-  	height: 380px;
+  	height: 450px;
   	width: 550px;
   	border: 3px solid #003e85;
   	border-radius: 10px;
@@ -134,6 +174,17 @@
   section.sabenc ul li{
     font-size:20px;
   }
+  aside{
+    float:right;
+    left: 80%;
+    position: absolute;
+  }
+  aside img{
+    margin:-2px;
+    width:90%;
+    border-radius:20px;
+    border:2px solid #003e85;
+  }
   ul.estatic{
     position: fixed;
     margin-top:-20px;
@@ -173,12 +224,12 @@
   }
   /*----------Postres-------------*/
   article.postre{
-    height:814px;
+    height:830px;
     overflow: scroll;
     overflow-x: hidden;
     margin-left:11%;
   }
-  div{
+  div.dpostre{
     float:left;
     margin:1% 5%;
     height:330px;
@@ -186,25 +237,28 @@
     border-radius:20px;
     border: 2px solid #003e85;
   }
-  div img{
-    float:left;
+  div.dpostre img{
     margin:-2px;
     width:100%;
     border-radius:20px;
     border:2px solid #003e85;
   }
-  div p.postres{
+  div.dpostre p.postres{
     color:#065d5a;
     font-size: 16px;
     font-weight: bold;
-    margin-left:5px;
+    margin-top:8px;
+    margin-left:15px;
   }
 
   /*----------FOOTER-------------*/
   Footer{
+    float:right;
+    position:relative;
     border: 2px solid #003e85;
     color:#026D6D;
     margin: auto auto;
+    width:100%;
     height: 22px;
     margin-top: 10px;
     border-radius: 10px;
