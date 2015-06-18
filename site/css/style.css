@@ -1,6 +1,7 @@
   body{
     background: linear-gradient(to right, #4cf2f2,#31a3a0,#4cf2f2);
   }
+
   header
   {
     margin:auto;
@@ -34,7 +35,6 @@
     border: 1px solid #003e85;
     border-radius: 20px;
   }
-
   a
   {
     text-decoration: none;
