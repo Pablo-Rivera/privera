@@ -1,3 +1,10 @@
+  @media (max-width: 975px) {
+  #buscador {
+    position: none;
+  }
+}
+
+
   body{
     background: linear-gradient(to right, #4cf2f2,#2d857e,#4cf2f2);
   }
