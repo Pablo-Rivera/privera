@@ -12,8 +12,7 @@
   }
 
   #buscador{
-    float:right;
-    position: absolute;
+    position: fixed;
   }
 
   #estatic li{
