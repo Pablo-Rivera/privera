@@ -1,5 +1,5 @@
   body{
-    background: linear-gradient(180deg, #4cf2f2,#2d857e,#4cf2f2);
+    background: linear-gradient(right, #4cf2f2,#2d857e,#4cf2f2);
   }
   #carousel-example-generic{
     border: 2px solid #174b86;
@@ -10,9 +10,14 @@
     border-radius:20px;
     border:2px solid #003e85;
   }
+
+  #estatic{
+    position: absolute;
+  }
+
   #estatic li{
     list-style-type: none;
-    font-size:20px;
+    font-size:18px;
     text-align: center;
     height:50px;
     width:110px;
