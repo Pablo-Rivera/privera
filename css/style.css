@@ -1,0 +1,13 @@
+  body{
+    background: linear-gradient(to right, #4cf2f2,#2d857e,#4cf2f2);
+  }
+
+  header
+  {
+    margin:auto;
+    height:100px;
+    width:674px;
+  }
+  #carousel-example-generic{
+    border: 2px solid #174b86;
+  }
