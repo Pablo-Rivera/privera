@@ -11,7 +11,7 @@
     border:2px solid #003e85;
   }
   #estatic li{
-    text-decoration: none;
+    list-style-type: none;
     font-size:20px;
     text-align: center;
     height:50px;
@@ -23,14 +23,18 @@
   }
 
   #estatic a:hover #crema{
+    text-decoration: none;
     background-image: url(crema.jpg);
   }
   #estatic a:hover #dulcedeleche{
+    text-decoration: none;
     background-image: url(dulcedeleche.jpg);
   }
   #estatic a:hover #chocolate{
+    text-decoration: none;
     background-image: url(chocolate.jpg);
   }
   #estatic a:hover #frutas{
+    text-decoration: none;
     background-image: url(frutilla.jpg);
   }
