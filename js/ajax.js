@@ -4,7 +4,7 @@ $(document).ready(function(){
 		$.ajax({
 			type: "GET",
 			dataType: "html",
-			url: "sobores.html",
+			url: "sabores.html",
 			success: function(data){
 				$("#cuerpo").html(data);
 			},
