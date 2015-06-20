@@ -1,5 +1,5 @@
   body{
-    background: linear-gradient(right, #4cf2f2,#2d857e,#4cf2f2);
+    background: linear-gradient(to right, #4cf2f2,#2d857e,#4cf2f2);
   }
   #carousel-example-generic{
     border: 2px solid #174b86;
@@ -12,6 +12,7 @@
   }
 
   #estatic{
+    float:right;
     position: absolute;
   }
 
