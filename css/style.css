@@ -6,7 +6,19 @@
   }
 
   #aside img{
-    width:90%;
+    width:100%;
     border-radius:20px;
     border:2px solid #003e85;
+  }
+  ul.estatic a:hover li.crema{
+    background-image: url(crema.jpg);
+  }
+  ul.estatic a:hover li.dulcedeleche{
+    background-image: url(dulcedeleche.jpg);
+  }
+  ul.estatic a:hover li.chocolate{
+    background-image: url(chocolate.jpg);
+  }
+  ul.estatic a:hover li.frutas{
+    background-image: url(frutilla.jpg);
   }
