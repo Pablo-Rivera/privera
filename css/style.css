@@ -1,6 +1,6 @@
   @media (max-width: 975px) {
   #buscador {
-    position: absolute;
+    position: relative;
   }
 }
 
