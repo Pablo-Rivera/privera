@@ -5,4 +5,14 @@
     border: 2px solid #174b86;
   }
 
-  
+  aside{
+    float:right;
+    left: 80%;
+    position: absolute;
+  }
+  aside img{
+    margin:-2px;
+    width:90%;
+    border-radius:20px;
+    border:2px solid #003e85;
+  }
