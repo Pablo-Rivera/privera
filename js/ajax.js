@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$("#sabores").on("click",function(event){
+	$("#Home").on("click",function(event){
 		event.preventDefault();
 		$.ajax({
 			type: "GET",
@@ -15,7 +15,7 @@ $(document).ready(function(){
 	})
 });
 $(document).ready(function(){
-	$("#Home").on("click",function(event){
+	$("#sabores").on("click",function(event){
 		event.preventDefault();
 		$.ajax({
 			type: "GET",
