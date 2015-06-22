@@ -1,7 +1,10 @@
   body{
     background: linear-gradient(to right, #4cf2f2,#2d857e,#4cf2f2);
   }
-
+  .row{
+    margin-left: 0px;
+    margin-right: 0px;
+  }
   header div{
     height:100px;
   }
