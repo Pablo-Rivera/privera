@@ -1,14 +1,30 @@
   body{
     background: linear-gradient(to right, #4cf2f2,#2d857e,#4cf2f2);
   }
+  @media (max-width: 480px){
+    header div{
+      height:75px !important;
+    }
+  }
   .row{
-    margin-left: 0px;
     margin-right: 0px;
   }
   header div{
     height:100px;
   }
+  img{
+    width:100%;
+  }
+  aside img{
+    border-radius:20px;
+    border:2px solid #003e85;
+  }
+  h2 img{
+    height:18px;
+    width:18px;
+  }
   header div img{
+    width:auto;
     height:100%;
     border-radius: 50px;
     border: 2px solid #174b86;
@@ -17,12 +33,6 @@
 
   #carousel-example-generic{
     border: 2px solid #174b86;
-  }
-
-  aside img{
-    width:100%;
-    border-radius:20px;
-    border:2px solid #003e85;
   }
 
   #estatic li{
