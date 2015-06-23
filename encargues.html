@@ -1,51 +1,34 @@
-<section class="sabenc">
+<section class="sabenc col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
   <p>Morbi non auctor dolor. Nam sit amet mauris consectetur, elementum sapien eget, dapibus ligula. Pellentesque iaculis lectus suscipit leo sollicitudin pharetra. Aenean laoreet efficitur fringilla. Nullam ornare pellentesque nibh eu egestas. Quisque ut commodo diam, consequat feugiat arcu. Vestibulum erat ante, ultrices accumsan odio eget, scelerisque bibendum leo. Vivamus id elit ultricies mauris imperdiet tincidunt eget vel eros.  </p>
 </section>
-<section class="sabenc">
+<section class="sabenc col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
   <h1>Precios por cantidad</h1>
   <table>
     <thead><!--Titulos de la tabla-->
       <tr>
         <th>Porciones</th>
         <th>Cantidad</th>
-        <th>Presio</th>
+        <th>Precio</th>
       </tr>
     </thead>
-    <tbody><!--Contenido de la tabla-->
-      <tr>
-        <td>Cassatas</td>
-        <td>0 < 100</td>
-        <td>15$</td>
-      </tr>
-      <tr>
-        <td>Cassatas</td>
-        <td>100 < 200</td>
-        <td>14$</td>
-      </tr>
-      <tr>
-        <td>Almendrado</td>
-        <td>0 < 100</td>
-        <td>15$</td>
-      </tr>
-      <tr>
-        <td>Almendrado</td>
-        <td>100 < 200</td>
-        <td>14$</td>
-      </tr>
-      <tr>
-        <td>Bombones</td>
-        <td>0 < 100</td>
-        <td>20$</td>
-      </tr>
-      <tr>
-        <td>Bombones</td>
-        <td>100 < 200</td>
-        <td>18$</td>
-      </tr>
+    <tbody id="cuerpotabla"><!--Contenido de la tabla-->
+
     </tbody>
+    <tfoot>
+      <tr>
+        <td> <input  id="porciones" type="text" class="form-control" placeholder="porciones" required /></td>
+        <td> <input id="cantidad" type="text" class="form-control" placeholder="cantidad" required /></td>
+        <td> <input placeholder="precio" type="text" class="form-control" id="precio" required /></td>
+      </tr>
+    </tfoot>
   </table>
+
+  <button type="submit" class="btn btn-success" onClick="guardarInformacion()">Agregar</button>
+
+  <button type="submit" class="btn btn-success" onClick="traerTabla()">Mostrar</button>
+
 </section>
-<section class="sabenc">
+<section class="sabenc col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
   <h1>Planilla de encargues</h1>
   <form>
     <p>Nombre: </p><input name="name" type="text" placeholder="Carlos" required>(*)
