@@ -35,7 +35,7 @@
     border: 2px solid #174b86;
   }
 
-  #estatic li, footer li{
+  #estatic li{
     list-style-type: none;
     font-size:18px;
     text-align: center;
