@@ -1,5 +1,5 @@
   body{
-    background: linear-gradient(to right, #4cf2f2,#2d857e,#4cf2f2);
+    background: linear-gradient(to right, #8ab1b1,#038379,#8ab1b1);
   }
   @media (max-width: 480px){
     header div{
@@ -48,6 +48,7 @@
   }
   #estatic a{
     text-decoration: none;
+    color:#000000;
   }
 
   #estatic a:hover #crema{
@@ -61,4 +62,13 @@
   }
   #estatic a:hover #frutas{
     background-image: url(frutilla.jpg);
+  }
+  .row a{
+    text-decoration: none;
+  }
+  .dpostre,.sabenc,.presentacion{
+    color:#000000;
+  }
+  .presentacion{
+       font-weight:bold;
   }
