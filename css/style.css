@@ -35,7 +35,7 @@
     border: 2px solid #174b86;
   }
 
-  #estatic li{
+  #estatic li, footer li{
     list-style-type: none;
     font-size:18px;
     text-align: center;
@@ -66,9 +66,14 @@
   .row a{
     text-decoration: none;
   }
+
   .dpostre,.sabenc,.presentacion{
     color:#000000;
   }
   .presentacion{
        font-weight:bold;
+  }
+  .table tr td {
+
+    text-align: center;
   }

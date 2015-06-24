@@ -22,7 +22,7 @@
   </header>
 
 
-  <nav class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 navbar navbar-default">
+  <nav class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 navbar navbar-default navbar-inverse">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -36,11 +36,12 @@
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li><a id="postres" href="">Postres</a></li>
           <li><a id="sabores" href="">Sabores</a></li>
           <li><a id="encargues" href="">Encargues</a></li>
+          <li><a id="juego" href="">Juego</a></li>
           <li data-toggle="modal" data-target="#myModal"><a href="#">Contacto</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -48,10 +49,10 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">La Empresa <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="#">Fotos</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else</a></li>
+              <li><a href="#">Historia</a></li>
+              <li><a href="#">Eventos</a></li>
               <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
+              <li><a href="#">Sucursal</a></li>
             </ul>
           </li>
         </ul>
@@ -111,11 +112,8 @@
   						<label>Tu email:</label><br />
   						<input class="input long" name="email" type="text" value=""/><br /><br />
   						<label>Razon:</label><br /><br />
-  						<input type="radio" name="razon" value="presupuesto">Presupuesto<br />
-  						<input type="radio" name="razon" value="reparacion">Reparacion<br />
-  						<input type="radio" name="razon" value="servicio">Servicio<br />
-  						<input type="radio" name="razon" value="presupuesto">Observación<br />
-  						<input type="radio" name="razon" value="queja">Queja<br /><br />
+  						<input type="radio" name="razon" value="Horarios">Horarios atencion<br />
+  						<input type="radio" name="razon" value="Queja">Queja<br /><br />
   						<label>Comentario:</label><br />
   						<textarea class="long"name="comentario" id="" cols="52" rows="10"></textarea>
   					</div>
@@ -129,13 +127,13 @@
   	</div>
   </div>
 
-  <footer class="row">
-      <div class="col-md-8 col-md-offset-2">
+  <footer>
+      <div class="row col-lg-8 col-md-offset-2">
         <ul>
-          <li>Av. P. Pereyra 923 y 1173 | Laprida</li>
-          <li>(02285) 420-655</li>
-          <li>info@losandes.com.ar</li>
-          <li>facebook.com/LosAndes</li>
+          <li class="col-lg-3">Av. P. Pereyra 923 y 1173 | Laprida</li>
+          <li class="col-lg-3">(02285) 420-655</li>
+          <li class="col-lg-3">info@losandes.com.ar</li>
+          <li class="col-lg-3">facebook.com/LosAndes</li>
         </ul>
       </div>
   </footer>

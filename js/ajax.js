@@ -62,6 +62,24 @@ $(document).ready(function(){
 		})
 	})
 });
+
+$(document).ready(function(){
+	$("#juego").on("click",function(event){
+		event.preventDefault();
+		$.ajax({
+			type: "GET",
+			dataType: "html",
+			url: "juego.html",
+			success: function(data){
+				$("#cuerpo").html(data);
+			},
+			error: function(){
+				alert("error");
+			}
+		})
+	})
+});
+
 $('document').ready(function(){
 
 	// Definicion de Variables
