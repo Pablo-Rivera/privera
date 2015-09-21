@@ -3,7 +3,7 @@ $(document).ready(function(){
 		$.ajax({
 			type: "GET",
 			dataType: "html",
-			url: seccion + '.html',
+			url: 'index.php?accion=' + seccion,
 			success: function(data){
 				$("#cuerpo").html(data);
 			},
@@ -14,7 +14,7 @@ $(document).ready(function(){
 	}
 	$("#Home").on("click",function(event){
 		event.preventDefault();
-		cargarnav('homex');
+		cargarnav('home');
 	})
 	$("#sabores").on("click",function(event){
 		event.preventDefault();
