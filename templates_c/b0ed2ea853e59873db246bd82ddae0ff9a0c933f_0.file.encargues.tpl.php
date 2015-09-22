@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-09-21 21:31:09
+<?php /* Smarty version 3.1.27, created on 2015-09-22 00:42:59
          compiled from "C:\xampp\htdocs\Web 2\privera\templates\encargues.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:1530456005afdd154d8_06864732%%*/
+/*%%SmartyHeaderCode:31083560087f3660b08_02544016%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b0ed2ea853e59873db246bd82ddae0ff9a0c933f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web 2\\privera\\templates\\encargues.tpl',
-      1 => 1442860948,
+      1 => 1442875363,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1530456005afdd154d8_06864732',
+  'nocache_hash' => '31083560087f3660b08_02544016',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56005afdd4e869_97595042',
+  'unifunc' => 'content_560087f37a8c15_01618367',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56005afdd4e869_97595042')) {
-function content_56005afdd4e869_97595042 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_560087f37a8c15_01618367')) {
+function content_560087f37a8c15_01618367 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1530456005afdd154d8_06864732';
+$_smarty_tpl->properties['nocache_hash'] = '31083560087f3660b08_02544016';
 ?>
 <section class="presentacion col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-1 col-xs-10 col-xs-offset-1">
   <p>Morbi non auctor dolor. Nam sit amet mauris consectetur, elementum sapien eget, dapibus ligula. Pellentesque iaculis lectus suscipit leo sollicitudin pharetra. Aenean laoreet efficitur fringilla. Nullam ornare pellentesque nibh eu egestas. Quisque ut commodo diam, consequat feugiat arcu. Vestibulum erat ante, ultrices accumsan odio eget, scelerisque bibendum leo. Vivamus id elit ultricies mauris imperdiet tincidunt eget vel eros.  </p>
@@ -67,6 +67,10 @@ $_smarty_tpl->properties['nocache_hash'] = '1530456005afdd154d8_06864732';
     <input class="der" type="submit" value="enviar">
   </form>
 </section>
+
+<?php echo '<script'; ?>
+ src="js/tabla.js"><?php echo '</script'; ?>
+>
 <?php }
 }
 ?>

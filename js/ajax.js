@@ -3,7 +3,7 @@ $(document).ready(function(){
 		$.ajax({
 			type: "GET",
 			dataType: "html",
-			url: 'index.php?accion=' + seccion,
+			url: 'index.php?nav=' + seccion,
 			success: function(data){
 				$("#cuerpo").html(data);
 			},

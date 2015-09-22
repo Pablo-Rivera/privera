@@ -2,7 +2,6 @@
 $('document').ready(function(){
 
 	// Definicion de Variables
-	grupo = 22;
 	function guardarInformacion(grupo){
 			var porciones = $("#porciones").val();
 			$("#porciones").val('');
@@ -56,11 +55,11 @@ $('document').ready(function(){
 	  });
 	}
 
-		traerTabla(grupo);
+		traerTabla(22);
 
 		// Llama a la Funcion cargarActividades cuando se Presiona el Boton Correspondiente
 		$('#agregar').on('click', function(event){
 			event.preventDefault();
-			guardarInformacion(grupo);
+			guardarInformacion(22);
 		});
 	});

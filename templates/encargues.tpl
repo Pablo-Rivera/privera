@@ -41,3 +41,5 @@
     <input class="der" type="submit" value="enviar">
   </form>
 </section>
+
+<script src="js/tabla.js"></script>
