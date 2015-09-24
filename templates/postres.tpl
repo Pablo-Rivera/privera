@@ -17,5 +17,3 @@
     </div>
   </ul>
 </article>
-
-<script src="js/bootstrap.min.js"></script>

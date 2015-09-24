@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-09-21 21:31:03
+<?php /* Smarty version 3.1.27, created on 2015-09-24 01:04:14
          compiled from "C:\xampp\htdocs\Web 2\privera\templates\inicio.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:2838956005af7a5f075_29246950%%*/
+/*%%SmartyHeaderCode:2483256032fee5705d8_83939458%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '17a75c66bcc33955e3c68e22558bae5d46ccb007' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web 2\\privera\\templates\\inicio.tpl',
-      1 => 1442861528,
+      1 => 1443049452,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2838956005af7a5f075_29246950',
+  'nocache_hash' => '2483256032fee5705d8_83939458',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56005af7be7f19_32439924',
+  'unifunc' => 'content_56032fee5b8d88_72790558',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56005af7be7f19_32439924')) {
-function content_56005af7be7f19_32439924 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56032fee5b8d88_72790558')) {
+function content_56032fee5b8d88_72790558 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '2838956005af7a5f075_29246950';
+$_smarty_tpl->properties['nocache_hash'] = '2483256032fee5705d8_83939458';
 ?>
 <!DOCTYPE html>
 <html>
@@ -159,9 +159,6 @@ $_smarty_tpl->properties['nocache_hash'] = '2838956005af7a5f075_29246950';
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <?php echo '<script'; ?>
  src="js/bootstrap.min.js"><?php echo '</script'; ?>
->
-    <?php echo '<script'; ?>
- src="js/info.js"><?php echo '</script'; ?>
 >
     <?php echo '<script'; ?>
  src="js/ajax.js"><?php echo '</script'; ?>
