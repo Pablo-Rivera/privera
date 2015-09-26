@@ -1,5 +1,5 @@
   body{
-    background: linear-gradient(to right, #8ab1b1,#038379,#8ab1b1);
+    background: linear-gradient(to right, #026b61,#08a294,#026b61);
   }
   @media (max-width: 480px){
     header div{
@@ -102,4 +102,7 @@
   -webkit-transition-property: transform;
   transition-property: transform;
   z-index: 9;
+}
+#categoria {
+  float: right;
 }

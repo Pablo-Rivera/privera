@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-09-24 01:04:14
+<?php /* Smarty version 3.1.27, created on 2015-09-25 23:57:42
          compiled from "C:\xampp\htdocs\Web 2\privera\templates\inicio.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:2483256032fee5705d8_83939458%%*/
+/*%%SmartyHeaderCode:53355605c356202fb4_36465381%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '17a75c66bcc33955e3c68e22558bae5d46ccb007' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web 2\\privera\\templates\\inicio.tpl',
-      1 => 1443049452,
+      1 => 1443218108,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2483256032fee5705d8_83939458',
+  'nocache_hash' => '53355605c356202fb4_36465381',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56032fee5b8d88_72790558',
+  'unifunc' => 'content_5605c35625e891_97023919',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56032fee5b8d88_72790558')) {
-function content_56032fee5b8d88_72790558 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5605c35625e891_97023919')) {
+function content_5605c35625e891_97023919 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '2483256032fee5705d8_83939458';
+$_smarty_tpl->properties['nocache_hash'] = '53355605c356202fb4_36465381';
 ?>
 <!DOCTYPE html>
 <html>
@@ -86,39 +86,7 @@ $_smarty_tpl->properties['nocache_hash'] = '2483256032fee5705d8_83939458';
 
   <div class="row" id="cuerpo">
 
-    <article class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
-      <div id="carousel-example-generic" class="carousel slide"  data-ride="carousel" >
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-        </ol>
-
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-          <div class="item active">
-            <img src="images/home1.png">
-          </div>
-          <div class="item">
-            <img src="images/home2.png">
-          </div>
-          <div class="item">
-            <img src="images/home3.png">
-          </div>
-        </div>
-
-        <!-- Controls -->
-        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-    </article>
+<!-- Contenedor para la navegacion Ajax -->
 
   </div>
 

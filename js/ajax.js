@@ -12,6 +12,7 @@ $(document).ready(function(){
 			}
 		})
 	}
+	cargarnav('home');
 	$("#Home").on("click",function(event){
 		event.preventDefault();
 		cargarnav('home');
