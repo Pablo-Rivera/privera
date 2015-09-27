@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-09-26 13:59:29
+<?php /* Smarty version 3.1.27, created on 2015-09-27 20:27:40
          compiled from "C:\xampp\htdocs\Web 2\privera\templates\adminproduc.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:9909560688a10f0539_70952986%%*/
+/*%%SmartyHeaderCode:50305608351c202fb3_77969936%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7583920535e07740a0d67227e0a6d95bf5a9d8de' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web 2\\privera\\templates\\adminproduc.tpl',
-      1 => 1443268767,
+      1 => 1443378407,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '9909560688a10f0539_70952986',
+  'nocache_hash' => '50305608351c202fb3_77969936',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_560688a11298b6_35385685',
+  'unifunc' => 'content_5608351c23c343_07093633',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_560688a11298b6_35385685')) {
-function content_560688a11298b6_35385685 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5608351c23c343_07093633')) {
+function content_5608351c23c343_07093633 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '9909560688a10f0539_70952986';
+$_smarty_tpl->properties['nocache_hash'] = '50305608351c202fb3_77969936';
 ?>
 <!DOCTYPE html>
 <html>
@@ -40,16 +40,21 @@ $_smarty_tpl->properties['nocache_hash'] = '9909560688a10f0539_70952986';
       <div class="page-header">
        <h1>Lista de Productos</h1>
       </div>
-      <div class="col-md-4" id="categoria">
+
+      <div class="col-md-4 catadmin">
+        <div  id="categoria">
+          <!-- lista las categorias -->
+        </div>
         <form>
-          <div class="form-group">
+          <div class="form-group col-md-12">
             <label for="task">Categoria</label>
             <input type="text" class="form-control" id="newcat" name="cat" placeholder="Categoria">
           </div>
           <button type="submit" id="nuevacat"class="btn btn-primary">Agregar</button>
         </form>
       </div>
-      <div class="conteiner" id="admin">
+
+      <div class="conteiner col-md-8" id="productos">
 
       </div>
 
@@ -86,21 +91,22 @@ $_smarty_tpl->properties['nocache_hash'] = '9909560688a10f0539_70952986';
            <button type="submit" id="nuevoproducto" class="btn btn-primary">Agregar</button>
          </form>
       </div>
-     </div>
-     <?php echo '<script'; ?>
+    </div>
+
+    <?php echo '<script'; ?>
  src="js/jquery-1.11.3.min.js"><?php echo '</script'; ?>
 >
-     <?php echo '<script'; ?>
- src="js/bootstrap.min.js"><?php echo '</script'; ?>
->
-     <?php echo '<script'; ?>
- src="js/dropcat.js"><?php echo '</script'; ?>
->
-     <?php echo '<script'; ?>
+    <?php echo '<script'; ?>
  src="js/listproductos.js"><?php echo '</script'; ?>
 >
-    </body>
-    </html>
+    <?php echo '<script'; ?>
+ src="js/bootstrap.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="js/dropcat.js"><?php echo '</script'; ?>
+>
+  </body>
+</html>
 <?php }
 }
 ?>

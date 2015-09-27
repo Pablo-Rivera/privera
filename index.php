@@ -8,14 +8,16 @@
 
   if(!array_key_exists(ConfigApp::$NAV,$_REQUEST))
   {
-    $navControler->mostrarAccionNav(ConfigApp::$NAV_DEFAULT);
+    if(array_key_exists("admin",$_REQUEST))
+    {
+      $navControler->mostrarAdmin($_REQUEST["admin"]);
+    }
+    else{
+      $navControler->mostrarAccionNav(ConfigApp::$NAV_DEFAULT);
+    }
   }
-  elseif ("admin"===$_REQUEST[ConfigApp::$NAV])
-  {
+  elseif ("admin"===$_REQUEST[ConfigApp::$NAV]){
     $navControler->mostrarAccionNav("adminproduc");
-  }
-  elseif ("agregar_cat"===$_REQUEST[ConfigApp::$NAV]){
-    $navControler->agregarCat();
   }
   else
   {

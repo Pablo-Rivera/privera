@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-09-26 13:30:06
+<?php /* Smarty version 3.1.27, created on 2015-09-27 20:47:24
          compiled from "C:\xampp\htdocs\Web 2\privera\templates\productos.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:13223560681be46cf72_93934884%%*/
+/*%%SmartyHeaderCode:15772560839bc487ab7_78789450%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,46 +9,43 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4f20b2dfcaa4bec3745cb50451b4ded730613708' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web 2\\privera\\templates\\productos.tpl',
-      1 => 1443267005,
+      1 => 1443379642,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '13223560681be46cf72_93934884',
+  'nocache_hash' => '15772560839bc487ab7_78789450',
   'variables' => 
   array (
-    'tareas' => 0,
-    'tarea' => 0,
+    'productos' => 0,
+    'producto' => 0,
     'key' => 0,
     'atributo' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_560681be4cc557_19513573',
+  'unifunc' => 'content_560839bc4eeaa0_54281083',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_560681be4cc557_19513573')) {
-function content_560681be4cc557_19513573 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_560839bc4eeaa0_54281083')) {
+function content_560839bc4eeaa0_54281083 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '13223560681be46cf72_93934884';
+$_smarty_tpl->properties['nocache_hash'] = '15772560839bc487ab7_78789450';
 ?>
-  <div class="row">
-
-   <div class="col-md-8">
-     <label class="control-label" for="nombre">Productos</label>
-      <?php
-$_from = $_smarty_tpl->tpl_vars['tareas']->value;
+<label class="control-label" for="nombre">Productos</label>
+<?php
+$_from = $_smarty_tpl->tpl_vars['productos']->value;
 if (!is_array($_from) && !is_object($_from)) {
 settype($_from, 'array');
 }
-$_smarty_tpl->tpl_vars['tarea'] = new Smarty_Variable;
-$_smarty_tpl->tpl_vars['tarea']->_loop = false;
-foreach ($_from as $_smarty_tpl->tpl_vars['tarea']->value) {
-$_smarty_tpl->tpl_vars['tarea']->_loop = true;
-$foreach_tarea_Sav = $_smarty_tpl->tpl_vars['tarea'];
+$_smarty_tpl->tpl_vars['producto'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['producto']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['producto']->value) {
+$_smarty_tpl->tpl_vars['producto']->_loop = true;
+$foreach_producto_Sav = $_smarty_tpl->tpl_vars['producto'];
 ?>
-      <ul class="list-group col-md-12">
-        <?php
-$_from = $_smarty_tpl->tpl_vars['tarea']->value;
+  <ul class="list-group col-md-12">
+    <?php
+$_from = $_smarty_tpl->tpl_vars['producto']->value;
 if (!is_array($_from) && !is_object($_from)) {
 settype($_from, 'array');
 }
@@ -59,33 +56,31 @@ foreach ($_from as $_smarty_tpl->tpl_vars['key']->value => $_smarty_tpl->tpl_var
 $_smarty_tpl->tpl_vars['atributo']->_loop = true;
 $foreach_atributo_Sav = $_smarty_tpl->tpl_vars['atributo'];
 ?>
-          <?php if ($_smarty_tpl->tpl_vars['key']->value === "id" || $_smarty_tpl->tpl_vars['key']->value === "precio") {?>
-            <ul class="list-group-item col-md-1">
-          <?php } elseif ($_smarty_tpl->tpl_vars['key']->value === "descripcion") {?>
-            <ul class="list-group-item col-md-6">
-          <?php } else { ?>
-            <ul class="list-group-item col-md-2">
-          <?php }?>
-              <?php echo $_smarty_tpl->tpl_vars['atributo']->value;?>
+      <?php if ($_smarty_tpl->tpl_vars['key']->value === "descripcion") {?>
+        <ul class="list-group-item col-md-6">
+          <?php echo $_smarty_tpl->tpl_vars['atributo']->value;?>
 
-            </ul>
-               <!--  hacer qeu los dos a funcionen con ajax-->
-               <!-- <a class="glyphicon glyphicon-trash" href="index.php?action=borrar_tarea&id_task=<?php echo $_smarty_tpl->tpl_vars['tarea']->value['id'];?>
-"></a>
-               <a class="glyphicon glyphicon-ok" href="index.php?action=realizar_tarea&id_task=<?php echo $_smarty_tpl->tpl_vars['tarea']->value['id'];?>
-"></a> -->
-        <?php
+        </ul>
+      <?php } elseif ($_smarty_tpl->tpl_vars['key']->value === "imagenes") {?>
+        <ul class="list-group-item col-md-2">
+          <img src="<?php echo $_smarty_tpl->tpl_vars['atributo']->value;?>
+" alt="no se cargo imagen" />
+        </ul>
+      <?php } else { ?>
+        <ul class="list-group-item col-md-1">
+          <?php echo $_smarty_tpl->tpl_vars['atributo']->value;?>
+
+        </ul>
+      <?php }?>
+    <?php
 $_smarty_tpl->tpl_vars['atributo'] = $foreach_atributo_Sav;
 }
 ?>
-       </ul>
-      <?php
-$_smarty_tpl->tpl_vars['tarea'] = $foreach_tarea_Sav;
+  </ul>
+<?php
+$_smarty_tpl->tpl_vars['producto'] = $foreach_producto_Sav;
 }
-?>
-   </div>
 
-  </div>
-<?php }
+}
 }
 ?>

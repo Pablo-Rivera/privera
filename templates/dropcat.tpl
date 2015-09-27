@@ -1,3 +1,3 @@
-{foreach $caracteristicas as $caractetistica}
-  <li><a href="#">{$caractetistica['nombre']}</a></li>
+{foreach $categorias as $categoria}
+  <li><a href="#">{$categoria["nombre"]}</a></li>
 {/foreach}

@@ -103,6 +103,9 @@
   transition-property: transform;
   z-index: 9;
 }
-#categoria {
+#productos{
+  float: left;
+}
+.catadmin {
   float: right;
 }

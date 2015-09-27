@@ -4,9 +4,9 @@ $(document).ready(function(){
 		$.ajax({
 			type: "GET",
 			dataType: "html",
-			url: 'index.php?nav=' + seccion,
+			url: 'index.php?admin=' + seccion,
 			success: function(data){
-				$("#admin").html(data);
+				$("#productos").html(data);
 			},
 			error: function(){
 				alert("error");

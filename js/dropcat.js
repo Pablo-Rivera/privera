@@ -24,7 +24,7 @@ $(document).ready(function(){
 		$.ajax({
 			type: "GET",
 			dataType: "html",
-			url: 'index.php?nav=' + seccion,
+			url: 'index.php?admin=' + seccion,
 			success: function(data){
 				$("#dropcat").html(data);
 			},
@@ -33,7 +33,23 @@ $(document).ready(function(){
 			}
 		})
 	}
+
+  function cargarcat(seccion){
+		$.ajax({
+			type: "GET",
+			dataType: "html",
+			url: 'index.php?admin=' + seccion,
+			success: function(data){
+				$("#categoria").html(data);
+			},
+			error: function(){
+				alert("error");
+			}
+		})
+	}
+
 	cargardrop('dropcat');
+  cargarcat('categorias');
 	$("#nuevacat").on("click",function(event){
 		event.preventDefault();
 		cargardrop('dropcat');

@@ -14,16 +14,21 @@
       <div class="page-header">
        <h1>Lista de Productos</h1>
       </div>
-      <div class="col-md-4" id="categoria">
+
+      <div class="col-md-4 catadmin">
+        <div  id="categoria">
+          <!-- lista las categorias -->
+        </div>
         <form>
-          <div class="form-group">
+          <div class="form-group col-md-12">
             <label for="task">Categoria</label>
             <input type="text" class="form-control" id="newcat" name="cat" placeholder="Categoria">
           </div>
           <button type="submit" id="nuevacat"class="btn btn-primary">Agregar</button>
         </form>
       </div>
-      <div class="conteiner" id="admin">
+
+      <div class="conteiner col-md-8" id="productos">
 
       </div>
 
@@ -60,10 +65,11 @@
            <button type="submit" id="nuevoproducto" class="btn btn-primary">Agregar</button>
          </form>
       </div>
-     </div>
-     <script src="js/jquery-1.11.3.min.js"></script>
-     <script src="js/bootstrap.min.js"></script>
-     <script src="js/dropcat.js"></script>
-     <script src="js/listproductos.js"></script>
-    </body>
-    </html>
+    </div>
+
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/listproductos.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/dropcat.js"></script>
+  </body>
+</html>

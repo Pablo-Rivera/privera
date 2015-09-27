@@ -8,14 +8,22 @@
     $this->smarty = new Smarty();
     $this->errores = array();
 
-    $this->smarty->assign('title',"AUTOS");
-    $this->smarty->assign('tareas',$productos);
-    $this->smarty->assign('caracteristicas',$carac);
   }
 
   function mostrar($accion){
     $this->smarty->display($accion .'.tpl');
   }
+
+  function mostrarAdminProd($accion,$productos){//cuidado con los AJAX
+    $this->smarty->assign('productos', $productos);
+    $this->mostrar($accion);
+  }
+
+  function mostrarAdminCat($accion,$categorias){//cuidado con los AJAX
+    $this->smarty->assign('categorias', $categorias);
+    $this->mostrar($accion);
+  }
+
   function agregarCat($accion){
   }
 

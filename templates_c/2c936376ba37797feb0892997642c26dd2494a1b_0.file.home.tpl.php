@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-09-21 21:31:14
+<?php /* Smarty version 3.1.27, created on 2015-09-27 14:55:29
          compiled from "C:\xampp\htdocs\Web 2\privera\templates\home.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:2752656005b02a66a80_42760781%%*/
+/*%%SmartyHeaderCode:55135607e741a946f9_18576347%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -13,16 +13,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2752656005b02a66a80_42760781',
+  'nocache_hash' => '55135607e741a946f9_18576347',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56005b02a9fe17_54856408',
+  'unifunc' => 'content_5607e741b16221_27259849',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56005b02a9fe17_54856408')) {
-function content_56005b02a9fe17_54856408 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5607e741b16221_27259849')) {
+function content_5607e741b16221_27259849 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '2752656005b02a66a80_42760781';
+$_smarty_tpl->properties['nocache_hash'] = '55135607e741a946f9_18576347';
 ?>
 <article class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
   <div id="carousel-example-generic" class="carousel slide"  data-ride="carousel" >
