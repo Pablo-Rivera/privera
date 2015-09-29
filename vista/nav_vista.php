@@ -24,6 +24,10 @@
     $this->mostrar($accion);
   }
 
+  function mostrarError($error){
+    array_push($this->errores, $error);
+  }
+
   function agregarCat($accion){
   }
 

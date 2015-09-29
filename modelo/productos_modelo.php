@@ -44,12 +44,60 @@ class ProductosModelo {
       $nombre_categoria = $consultaCategoria->fetchAll()[0];//SOLO SE PUEDE UNA CATEGORA POR PRODUCTO POR ESO EL 0
       $producto["fk_id_categoria"]=$nombre_categoria["nombre"];
       $consultaImagen= $this->db->prepare("SELECT path FROM imagen where fk_id_producto=?");
-      $consultaImagen->execute(array($producto['id_product']));
+      $consultaImagen->execute(array($producto['id_producto']));
       $imagenes = $consultaImagen->fetchAll()[0];//SOLO SE PUEDE UNA CATEGORA POR PRODUCTO POR ESO EL 0
       $producto["imagenes"]=$imagenes["path"];
       $productos[]=$producto;
     }
     return $productos;
+  }
+
+  private function subirImagenes($imagenes){
+      $carpeta = "uploads/imagenes/";
+      $destinos_finales = array();
+      foreach ($imagenes["tmp_name"] as $key => $value) {
+        $destinos_finales[] = $carpeta.uniqid().$imagenes["name"][$key];
+        move_uploaded_file($value, end($destinos_finales));
+      }
+
+      return $destinos_finales;
+    }
+
+  function agregarProducto($idcategoria, $nombre, $descripcion, $precio, $imagenes){
+    if($idcategoria && $nombre && $descripcion && $precio && $imagenes){
+      try{
+        $destinos_finales=$this->subirImagenes($imagenes);
+    //Inserto la tarea
+        $this->db->beginTransaction();
+        $consulta = $this->db->prepare('INSERT INTO producto(fk_id_categoria, nombre, descripcion, precio) VALUES(?,?,?,?)');
+        $consulta->execute(array($idcategoria, $nombre, $descripcion, $precio));
+        $id_producto = $this->db->lastInsertId();
+    //Insertar las imagenes
+        foreach ($destinos_finales as $key => $value) {
+          $consulta = $this->db->prepare('INSERT INTO imagen(fk_id_producto,path) VALUES(?,?)');
+          $consulta->execute(array($id_producto, $value));
+        }
+        $this->db->commit();
+
+      }
+        catch(Exception $e){
+
+          $this->db->rollBack();
+      }
+    }
+  }
+
+  function agregarCategoria($categoria){
+    if(strlen($categoria) > 4){
+      try{
+        $this->db->beginTransaction();
+        $queryInsert = $this->db->prepare('INSERT INTO categoria(nombre) VALUES(?)');
+        $queryInsert->execute(array($categoria));
+        $this->db->commit();
+      } catch(Exception $e){
+        $this->db->rollBack();
+      }
+    }
   }
 
   // function agregarTarea($tarea, $imagenes){

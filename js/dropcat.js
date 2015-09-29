@@ -1,24 +1,29 @@
 $(document).ready(function(){
 
-  function guardarInformacion(){
-      var categoria = $("#newcat").val();
-      $("#newcat").val('');
-      if (categoria){
+  $("#formcat").submit(function(event){
+    event.preventDefault();
+
+        /* Clear result div*/
+
+        /* Get some values from elements on the page: */
+        var values = $(this).serialize();
+
+        /* Send the data using post and put the results in a div */
         $.ajax({
-           type: "POST",
-           dataType: 'JSON',
-           data: JSON.stringify(info),
-           contentType: "application/json; charset=utf-8",
-           url: "index.php?nav=agregar_cat",
-          success: function(data){
-              cargardrop('dropcat');
-             },
-             error:function(data){
-               alert('No se pudo comunicar con el servidor');
-             }
+            url: "index.php?admin=agregar_categoria",
+            type: "post",
+            data: values,
+            success: function(){
+                cargarcat('categorias');
+                cargardrop('dropcat');
+            },
+            error:function(){
+                alert("failure");
+                $("#result").html('There is error while submit');
+            }
         });
-      }
-  }
+
+  });
 
 	function cargardrop(seccion){
 		$.ajax({
@@ -50,9 +55,10 @@ $(document).ready(function(){
 
 	cargardrop('dropcat');
   cargarcat('categorias');
-	$("#nuevacat").on("click",function(event){
-		event.preventDefault();
-		cargardrop('dropcat');
-	})
+	// $("#nuevacat").on("click",function(event){
+	// 	event.preventDefault();
+	// 	cargardrop('dropcat');
+  //   cargarcat('categorias');
+	// })
 
 });

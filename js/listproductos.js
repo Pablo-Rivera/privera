@@ -14,9 +14,9 @@ $(document).ready(function(){
 		})
 	}
   cargarnav('productos');
-	$("#nuevoproducto").on("click",function(event){
-		event.preventDefault();
-		cargarnav('productos');
-	})
+	// $("#nuevoproducto").on("click",function(event){
+	// 	event.preventDefault();
+	// 	cargarnav('productos');
+	// })
 
 });

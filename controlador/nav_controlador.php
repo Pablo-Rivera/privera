@@ -13,6 +13,7 @@
   function mostrarAccionNav($accion){
     $this->vista->mostrar($accion);
   }
+
   function mostrarAdmin($accion){
     if ($accion == "productos")
     {
@@ -23,12 +24,20 @@
     }
   }
 
-  public function agregarCat(){
-    if (array_key_exists('cat', $_REQUEST) && $_REQUEST['cat'] != null){
-      // $this->modelo->agregarCat($_REQUEST['cat']);
+  function agregarProducto(){
+      if(isset($_REQUEST['dropcat']) && isset($_REQUEST['nombre']) && isset($_REQUEST['descripcion']) && isset($_REQUEST['precio']) && isset($_FILES['imagesToUpload'])){
+          $this->modelo->agregarProducto($_REQUEST['dropcat'], $_REQUEST['nombre'], $_REQUEST['descripcion'], $_REQUEST['precio'], $_FILES['imagesToUpload']);
+        }
+      else{
+        $this->vista->mostrarError('La tarea que intenta crear esta vacia');
+      }
     }
-    else
-      echo "No a ingresado categoria";
-  }
+
+    function agregarCategoria(){
+			if(isset($_REQUEST['categoria'])){
+				$this->modelo->agregarCategoria($_REQUEST['categoria']);
+			}
+		}
+
   }
  ?>

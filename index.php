@@ -10,7 +10,15 @@
   {
     if(array_key_exists("admin",$_REQUEST))
     {
-      $navControler->mostrarAdmin($_REQUEST["admin"]);
+      if($_REQUEST["admin"]==="dropcat" || $_REQUEST["admin"]==="categorias" ||$_REQUEST["admin"]==="productos" ){
+        $navControler->mostrarAdmin($_REQUEST["admin"]);
+      }
+      elseif($_REQUEST["admin"]==="agregar_producto") {
+        $navControler->agregarProducto();
+      }
+      elseif ($_REQUEST["admin"]==="agregar_categoria"){
+        $navControler->agregarCategoria();
+      }
     }
     else{
       $navControler->mostrarAccionNav(ConfigApp::$NAV_DEFAULT);

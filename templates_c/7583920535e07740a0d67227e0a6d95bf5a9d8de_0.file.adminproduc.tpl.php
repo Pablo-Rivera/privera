@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-09-27 20:27:40
+<?php /* Smarty version 3.1.27, created on 2015-09-29 06:53:38
          compiled from "C:\xampp\htdocs\Web 2\privera\templates\adminproduc.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:50305608351c202fb3_77969936%%*/
+/*%%SmartyHeaderCode:2959560a1952826a38_18339020%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7583920535e07740a0d67227e0a6d95bf5a9d8de' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web 2\\privera\\templates\\adminproduc.tpl',
-      1 => 1443378407,
+      1 => 1443502413,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '50305608351c202fb3_77969936',
+  'nocache_hash' => '2959560a1952826a38_18339020',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5608351c23c343_07093633',
+  'unifunc' => 'content_560a195286b4d1_34895630',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5608351c23c343_07093633')) {
-function content_5608351c23c343_07093633 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_560a195286b4d1_34895630')) {
+function content_560a195286b4d1_34895630 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '50305608351c202fb3_77969936';
+$_smarty_tpl->properties['nocache_hash'] = '2959560a1952826a38_18339020';
 ?>
 <!DOCTYPE html>
 <html>
@@ -45,10 +45,10 @@ $_smarty_tpl->properties['nocache_hash'] = '50305608351c202fb3_77969936';
         <div  id="categoria">
           <!-- lista las categorias -->
         </div>
-        <form>
+        <form id="formcat">
           <div class="form-group col-md-12">
             <label for="task">Categoria</label>
-            <input type="text" class="form-control" id="newcat" name="cat" placeholder="Categoria">
+            <input type="text" class="form-control" id="categoria" name="categoria" placeholder="Categoria">
           </div>
           <button type="submit" id="nuevacat"class="btn btn-primary">Agregar</button>
         </form>
@@ -59,36 +59,43 @@ $_smarty_tpl->properties['nocache_hash'] = '50305608351c202fb3_77969936';
       </div>
 
       <div class="row col-md-8">
-         <form  action="index.php?action=agregar_tarea" method="POST" enctype="multipart/form-data">
+         <form  action="index.php?admin=agregar_producto" method="POST" enctype="multipart/form-data">
            <div class="form-group">
              <div class="col-md-12">
                <label for="task">Producto</label>
              </div>
-             <div class="col-md-3">
-               <input type="text" class="form-control" id="task" name="task" placeholder="nombre">
+             <div class="col-md-2">
+               <input type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre">
              </div>
-             <div class="col-md-7">
-               <input type="text" class="form-control" id="task" name="task" placeholder="descripcion">
+             <div class="col-md-8">
+               <textarea class="form-control" maxlength="5000" rows="8" id="descripcion" name="descripcion" placeholder="descripcion"></textarea>
              </div>
              <div class="col-md-2">
-               <div class="dropdown">
-                  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    Categoria
-                    <span class="caret"></span>
-                  </button>
-                  <ul id="dropcat" class="dropdown-menu" aria-labelledby="dropdownMenu1">
-
-                  </ul>
-                </div>
+               <input type="text" class="form-control" id="precio" name="precio" placeholder="precio">
              </div>
-            </div>
+             <div class="col-md-12">
+              <div class="form-group col-md-2">
+  					    <select id="dropcat" name="dropcat">
 
-           <div class="form-group">
-             <label for="imagesToUpload">Imagenes</label>
-             <input type="file" name="imagesToUpload[]" id="imagesToUpload" multiple/>
-           </div>
+        				</select>
+        		  </div>
+                 <!-- <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                      Categoria
+                      <span class="caret"></span>
+                    </button>
+                    <ul id="dropcat" class="dropdown-menu" aria-labelledby="dropdownMenu1">
 
-           <button type="submit" id="nuevoproducto" class="btn btn-primary">Agregar</button>
+                    </ul>
+                  </div> -->
+
+               <div class="form-group col-md-5 col-md-offset-5">
+                 <label for="imagesToUpload">Imagenes</label>
+                 <input type="file" name="imagesToUpload[]" id="imagesToUpload" multiple/>
+               </div>
+             </div>
+
+           <button type="submit" id="nuevoproducto" class="btn btn-primary col-md-2 col-md-offset-2">Agregar</button>
          </form>
       </div>
     </div>
