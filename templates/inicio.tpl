@@ -40,6 +40,7 @@
           <li><a id="sabores" href="">Sabores</a></li>
           <li><a id="encargues" href="">Encargues</a></li>
           <li><a id="juego" href="">Juego</a></li>
+          <li><a id="Productos" href="">Productos</a></li>
           <li data-toggle="modal" data-target="#myModal"><a href="#">Contacto</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">

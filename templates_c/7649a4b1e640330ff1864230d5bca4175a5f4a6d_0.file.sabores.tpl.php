@@ -1,3 +1,29 @@
+<?php /* Smarty version 3.1.27, created on 2015-09-29 09:16:34
+         compiled from "C:\xampp\htdocs\Web 2\privera\templates\sabores.tpl" */ ?>
+<?php
+/*%%SmartyHeaderCode:17729560a3ad2465555_56712882%%*/
+if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '7649a4b1e640330ff1864230d5bca4175a5f4a6d' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\Web 2\\privera\\templates\\sabores.tpl',
+      1 => 1443510991,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '17729560a3ad2465555_56712882',
+  'has_nocache_code' => false,
+  'version' => '3.1.27',
+  'unifunc' => 'content_560a3ad24c0e32_34984540',
+),false);
+/*/%%SmartyHeaderCode%%*/
+if ($_valid && !is_callable('content_560a3ad24c0e32_34984540')) {
+function content_560a3ad24c0e32_34984540 ($_smarty_tpl) {
+
+$_smarty_tpl->properties['nocache_hash'] = '17729560a3ad2465555_56712882';
+?>
 <article class="col-md-7">
   <section class="row col-lg-8 col-lg-offset-4 col-md-8 col-md-offset-4 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 presentacion">
     <p>Más de 30 sabores para deleitar. Todos los productos Los Andes son elaborados artesanalmente, con la más alta calidad, cuidando minuciosamente la selección de las materias primas y todos los procesos de preparación. La leche es fresca y  las frutas son cuidadosamente seleccionadas y tratadas en su forma natural durante todo el proceso de elaboración. De esta manera cada sabor de helado es el resultado de una receta única sin agregado de aditivos ni conservantes.</p>
@@ -80,3 +106,6 @@
     <img src="images/vario potes.jpg">
     <img src="images/mentagra.jpg">
   </aside>
+<?php }
+}
+?>

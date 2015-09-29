@@ -33,5 +33,9 @@ $(document).ready(function(){
 		event.preventDefault();
 		cargarnav('juego');
 	})
+	$("#Productos").on("click",function(event){
+		event.preventDefault();
+		cargarnav('verporductos');
+	})
 
 });

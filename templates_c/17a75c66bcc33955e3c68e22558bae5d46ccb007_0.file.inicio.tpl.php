@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-09-27 14:55:28
+<?php /* Smarty version 3.1.27, created on 2015-09-29 15:32:16
          compiled from "C:\xampp\htdocs\Web 2\privera\templates\inicio.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:39095607e740b6a0e1_61657930%%*/
+/*%%SmartyHeaderCode:22749560a92e0dfe007_07808440%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '17a75c66bcc33955e3c68e22558bae5d46ccb007' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Web 2\\privera\\templates\\inicio.tpl',
-      1 => 1443218108,
+      1 => 1443525139,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '39095607e740b6a0e1_61657930',
+  'nocache_hash' => '22749560a92e0dfe007_07808440',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5607e7411a76e5_02772829',
+  'unifunc' => 'content_560a92e0e6ca04_72330391',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5607e7411a76e5_02772829')) {
-function content_5607e7411a76e5_02772829 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_560a92e0e6ca04_72330391')) {
+function content_560a92e0e6ca04_72330391 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '39095607e740b6a0e1_61657930';
+$_smarty_tpl->properties['nocache_hash'] = '22749560a92e0dfe007_07808440';
 ?>
 <!DOCTYPE html>
 <html>
@@ -66,6 +66,7 @@ $_smarty_tpl->properties['nocache_hash'] = '39095607e740b6a0e1_61657930';
           <li><a id="sabores" href="">Sabores</a></li>
           <li><a id="encargues" href="">Encargues</a></li>
           <li><a id="juego" href="">Juego</a></li>
+          <li><a id="Productos" href="">Productos</a></li>
           <li data-toggle="modal" data-target="#myModal"><a href="#">Contacto</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">

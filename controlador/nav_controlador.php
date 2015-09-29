@@ -15,7 +15,7 @@
   }
 
   function mostrarAdmin($accion){
-    if ($accion == "productos")
+    if ($accion === "productos"||$accion==="verporductos")
     {
       $this->vista->mostrarAdminProd($accion,$this->modelo->getProductos());
     }
@@ -31,6 +31,7 @@
       else{
         $this->vista->mostrarError('La tarea que intenta crear esta vacia');
       }
+      $this->mostrarAccionNav("productos");
     }
 
     function agregarCategoria(){
@@ -39,5 +40,21 @@
 			}
 		}
 
+    function agregarImagenes(){
+    if(isset($_REQUEST['id_task']) && isset($_FILES)){
+      $this->modelo->agregarImagenes($_REQUEST['id_task'],$_FILES);
+      echo '{ "result" :  "OK" }';
+    }else{
+      echo '{ "result" :  "Faltan paramentros" }';
+    }
+  }
+  function listarProductoNav($accion){
+    $this->mostrarAdmin($accion);
+  }
+  function verProducto($accion){
+      if(isset($_REQUEST['id_producto'])){
+        $this->vista->mostrarProducto($accion,$this->modelo->getProducto($_REQUEST['id_producto']));
+      }
+  }
   }
  ?>

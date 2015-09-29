@@ -19,6 +19,12 @@
       elseif ($_REQUEST["admin"]==="agregar_categoria"){
         $navControler->agregarCategoria();
       }
+      elseif ($_REQUEST["admin"]==="agregar_imagenes") {
+        $navControler->agregarImagenes();
+      }
+      elseif ($_REQUEST["admin"]==="verproducto") {
+        $navControler->verProducto($_REQUEST["admin"]);
+      }
     }
     else{
       $navControler->mostrarAccionNav(ConfigApp::$NAV_DEFAULT);
@@ -26,6 +32,9 @@
   }
   elseif ("admin"===$_REQUEST[ConfigApp::$NAV]){
     $navControler->mostrarAccionNav("adminproduc");
+  }
+  elseif ("verporductos"===$_REQUEST[ConfigApp::$NAV]){
+    $navControler->listarProductoNav("verporductos");
   }
   else
   {

@@ -28,9 +28,10 @@
     array_push($this->errores, $error);
   }
 
-  function agregarCat($accion){
+  function mostrarProducto($accion,$producto){
+    $this->smarty->assign('producto', $producto);
+    $this->mostrar($accion);
   }
-
-
-  }
+  
+}
  ?>

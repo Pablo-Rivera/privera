@@ -1,6 +1,7 @@
 
 $(document).ready(function(){
-	function cargarnav(seccion){
+
+	function cargarProductos(seccion){
 		$.ajax({
 			type: "GET",
 			dataType: "html",
@@ -13,10 +14,25 @@ $(document).ready(function(){
 			}
 		})
 	}
-  cargarnav('productos');
-	// $("#nuevoproducto").on("click",function(event){
-	// 	event.preventDefault();
-	// 	cargarnav('productos');
-	// })
 
+  cargarProductos('productos');
+
+  $("#formprod").submit(function(event){
+    event.preventDefault();
+
+        $.ajax({
+            url: "index.php?admin=agregar_producto",
+            type: "post",
+            data: new FormData(this),
+			      contentType : false,
+			      processData : false,
+            success: function(){
+							cargarProductos('productos');
+            },
+            error:function(){
+                alert("failure");
+            }
+        });
+
+  });
 });

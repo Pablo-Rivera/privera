@@ -10,12 +10,12 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <div class="col-md-10 col-md-offset-1">
+    <div class="col-md-12" id="producto">
       <div class="page-header">
        <h1>Lista de Productos</h1>
       </div>
 
-      <div class="col-md-4 catadmin">
+      <div class="col-md-3 catadmin">
         <div  id="categoria">
           <!-- lista las categorias -->
         </div>
@@ -28,12 +28,12 @@
         </form>
       </div>
 
-      <div class="conteiner col-md-8" id="productos">
-
+      <div class="conteiner col-md-9" id="productos">
+          <!-- lista de productos -->
       </div>
 
-      <div class="row col-md-8">
-         <form  action="index.php?admin=agregar_producto" method="POST" enctype="multipart/form-data">
+      <div class="row col-md-9">
+         <form id="formprod" >
            <div class="form-group">
              <div class="col-md-12">
                <label for="task">Producto</label>
@@ -42,7 +42,7 @@
                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre">
              </div>
              <div class="col-md-8">
-               <textarea class="form-control" maxlength="5000" rows="8" id="descripcion" name="descripcion" placeholder="descripcion"></textarea>
+               <textarea class="form-control" maxlength="254" rows="3" id="descripcion" name="descripcion" placeholder="descripcion"></textarea>
              </div>
              <div class="col-md-2">
                <input type="text" class="form-control" id="precio" name="precio" placeholder="precio">
@@ -50,19 +50,9 @@
              <div class="col-md-12">
               <div class="form-group col-md-2">
   					    <select id="dropcat" name="dropcat">
-
+                    <!-- categorias -->
         				</select>
         		  </div>
-                 <!-- <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                      Categoria
-                      <span class="caret"></span>
-                    </button>
-                    <ul id="dropcat" class="dropdown-menu" aria-labelledby="dropdownMenu1">
-
-                    </ul>
-                  </div> -->
-
                <div class="form-group col-md-5 col-md-offset-5">
                  <label for="imagesToUpload">Imagenes</label>
                  <input type="file" name="imagesToUpload[]" id="imagesToUpload" multiple/>
@@ -70,11 +60,12 @@
              </div>
 
            <button type="submit" id="nuevoproducto" class="btn btn-primary col-md-2 col-md-offset-2">Agregar</button>
-         </form>
-      </div>
+         </div>
+       </form>
+     </div>
     </div>
 
-    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/jquery-1.11.3.js"></script>
     <script src="js/listproductos.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/dropcat.js"></script>
