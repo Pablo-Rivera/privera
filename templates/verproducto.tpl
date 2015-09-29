@@ -1,4 +1,4 @@
-<label class="control-label col-md-6 col-md-offset-3" for="nombre">Producto</label>
+<label class="control-label col-md-8 col-md-offset-4" for="nombre">Producto</label>
     {foreach $producto as $key => $atributo}
       {if $key === "descripcion"}
         <ul class="list-group-item col-md-8">

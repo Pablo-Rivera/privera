@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
+    <form id="imgAjax" >
+      <input type="file"  id="imagesToUpload2" name="imagesToUpload2[]" multiple>
+    </form>
     <div class="col-md-12" id="producto">
       <div class="page-header">
        <h1>Lista de Productos</h1>
@@ -52,14 +55,13 @@
   					    <select id="dropcat" name="dropcat">
                     <!-- categorias -->
         				</select>
-        		  </div>
-               <div class="form-group col-md-5 col-md-offset-5">
-                 <label for="imagesToUpload">Imagenes</label>
-                 <input type="file" name="imagesToUpload[]" id="imagesToUpload" multiple/>
-               </div>
-             </div>
+        		  </div><br>
 
-           <button type="submit" id="nuevoproducto" class="btn btn-primary col-md-2 col-md-offset-2">Agregar</button>
+              <span class="file-input btn btn-primary btn-file">
+                Cargar&hellip; <input class="cargar form-group col-md-1 col-md-offset-3" type="file"  id="imagesToUpload" name="imagesToUpload[]" multiple/>
+              </span>
+
+           <button type="submit" id="nuevoproducto" class="btn btn-primary col-md-2 col-md-offset-1">Agregar</button>
          </div>
        </form>
      </div>

@@ -21,7 +21,7 @@
       {/if}
     {/foreach}
     <button class="btn btn-primary ver" value="{$producto.id_producto}"type="button" name="ver">Ver</button>
-    <a class="glyphicon glyphicon-plus botonAgregarImagenes" href="index.php?admin=agregar_imagenes&id_task={$producto['id_producto']}"></a>
+    <a class="glyphicon glyphicon-plus botonAgregarImagenes" href="{$producto['id_producto']}"></a>
   </ul>
 {/foreach}
 

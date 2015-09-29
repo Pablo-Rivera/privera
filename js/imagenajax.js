@@ -1,35 +1,37 @@
 $(document).ready(function(){
-  $(".botonAgregarImagenes").on("click", function(event){
-    event.preventDefault();
-
-    var archivos = $("#imagesToUpload").prop('files');
-
-    if(typeof(archivos) == 'undefined'){
-      mostrarMensaje("No pusiste imagenes");
-      return;
-    }
-
-    var datos = new FormData();
-
-    $.each(archivos, function(key,value){
-      datos.append(key,value);
-    });
-
+  var id_prod = '';
+  function AjaxImagenes(prod,formData){
     $.ajax({
       type: "POST",
-      dataType: "json",
-      url: event.target.href,
-      data: datos,
+      url:"index.php?admin=agregar_imagenes&id_task=" + prod,
+      data: formData,
+      contentType : false,
+      processData : false,
       success: function(data){
         alert(data.result);
       },
       error: function(){
         alert("No anduvo la llamada AJAX");
       },
-      contentType : false,
-      processData : false
     });
+  };
 
+  $(".botonAgregarImagenes").on("click", function(event){
+    event.preventDefault();
+    id_prod=event.target.href;
+    var posbarra=id_prod.lastIndexOf("/");
+    id_prod = id_prod.substr(posbarra+1);
+    $('#imagesToUpload2').click();
+  });
+
+  $("#imagesToUpload2").on("change", function(event){
+    event.preventDefault();
+    $('#imgAjax').submit();
+  });
+
+  $("#imgAjax").on("submit", function(event){
+    event.preventDefault();
+    AjaxImagenes(id_prod,new FormData(this));
   });
 
   function cargarProducto(seccion,id){

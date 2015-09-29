@@ -41,8 +41,8 @@
 		}
 
     function agregarImagenes(){
-    if(isset($_REQUEST['id_task']) && isset($_FILES)){
-      $this->modelo->agregarImagenes($_REQUEST['id_task'],$_FILES);
+    if(isset($_REQUEST['id_task']) && isset($_FILES["imagesToUpload2"])){
+      $this->modelo->agregarImagenes($_REQUEST['id_task'],$_FILES["imagesToUpload2"]);
       echo '{ "result" :  "OK" }';
     }else{
       echo '{ "result" :  "Faltan paramentros" }';

@@ -117,7 +117,6 @@ class ProductosModelo {
 
 
   function agregarImagenes($id_producto, $imagenes){
-    print_r($imagenes);
     if($imagenes){
       $rutas=$this->subirImagenes($imagenes);
       $consulta = $this->db->prepare('INSERT INTO imagen(fk_id_producto,path) VALUES(?,?)');
