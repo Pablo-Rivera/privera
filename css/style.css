@@ -109,11 +109,11 @@
 .catadmin {
   float: right;
 }
-.botonAgregarImagenes{
+.botonAgregarImagenes, .eliminar{
   text-decoration: none;
   color: #f6f6f6;
 }
-.botonAgregarImagenes:hover{
+.botonAgregarImagenes:hover, .eliminar:hover {
   text-decoration: none;
   color: #d400d9;
 }

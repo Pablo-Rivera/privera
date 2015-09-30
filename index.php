@@ -29,6 +29,9 @@
       elseif ($_REQUEST[ConfigAdmin::$ADMIN]===ConfigAdmin::$ADMIN_PRODUCTO) {
         $navControler->verProducto($_REQUEST[ConfigAdmin::$ADMIN]);
       }
+      elseif ($_REQUEST[ConfigAdmin::$ADMIN]===ConfigAdmin::$ADMIN_ELIMINAR_PROD) {
+        $navControler->eliminarProducto();
+      }
     }
     else{
       $navControler->mostrarAccionNav(ConfigApp::$NAV_DEFAULT);
