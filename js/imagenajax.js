@@ -40,7 +40,9 @@ $(document).ready(function(){
       dataType: "html",
       url: 'index.php?admin=' + seccion+'&id_producto='+id,
       success: function(data){
-        $("#producto").html(data);
+        $("#productos").html(data);
+        $("#cuerpo").html(data);
+
       },
       error: function(){
         alert("error");

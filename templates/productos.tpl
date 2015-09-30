@@ -1,21 +1,21 @@
 <label class="control-label" for="nombre">Productos</label>
 {foreach $productos as $producto}
-  <ul class="list-group col-md-12">
+  <ul class="list-group col-sm-12">
     {foreach $producto as $key => $atributo}
       {if $key === "descripcion"}
-        <ul class="list-group-item col-md-4">
+        <ul class="list-group-item col-sm-4">
           {$atributo}
         </ul>
       {elseif $key === "imagenes" }
-        <ul class="list-group-item col-md-2">
+        <ul class="list-group-item col-sm-2">
           <img src="{$atributo}" alt="no se cargo imagen" />
         </ul>
       {elseif $key === "nombre" }
-        <ul class="list-group-item col-md-2">
+        <ul class="list-group-item col-sm-2">
           {$atributo}
         </ul>
       {else}
-        <ul class="list-group-item col-md-1">
+        <ul class="list-group-item col-sm-1">
           {$atributo}
         </ul>
       {/if}

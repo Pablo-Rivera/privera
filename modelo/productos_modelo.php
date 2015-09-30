@@ -31,11 +31,11 @@ class ProductosModelo {
     {
       $consultaCategoria= $this->db->prepare("SELECT nombre FROM categoria where id_categoria=?");
       $consultaCategoria->execute(array($producto['fk_id_categoria']));
-      $nombre_categoria = $consultaCategoria->fetchAll()[0];//SOLO SE PUEDE UNA CATEGORA POR PRODUCTO POR ESO EL 0
+      $nombre_categoria = $consultaCategoria->fetch();//SOLO SE PUEDE UNA CATEGORA POR PRODUCTO POR ESO EL 0
       $producto["fk_id_categoria"]=$nombre_categoria["nombre"];
       $consultaImagen= $this->db->prepare("SELECT path FROM imagen where fk_id_producto=?");
       $consultaImagen->execute(array($producto['id_producto']));
-      $imagenes = $consultaImagen->fetchAll()[0];//SOLO SE PUEDE UNA CATEGORA POR PRODUCTO POR ESO EL 0
+      $imagenes = $consultaImagen->fetch();//SOLO SE PUEDE UNA CATEGORA POR PRODUCTO POR ESO EL 0
       $producto["imagenes"]=$imagenes["path"];
       $productos[]=$producto;
     }
@@ -63,7 +63,7 @@ class ProductosModelo {
         $consulta->execute(array($idcategoria, $nombre, $descripcion, $precio));
         $id_producto = $this->db->lastInsertId();
     //Insertar las imagenes
-        foreach ($destinos_finales as $key => $value) {
+        foreach ($destinos_finales as $value) {
           $consulta = $this->db->prepare('INSERT INTO imagen(fk_id_producto,path) VALUES(?,?)');
           $consulta->execute(array($id_producto, $value));
         }
@@ -106,15 +106,6 @@ class ProductosModelo {
       }
     }
   }
-
-
-  // function borrarTarea($id_tarea){
-  //   $consulta = $this->db->prepare('DELETE FROM tarea WHERE id=?');
-  //   $consulta->execute(array($id_tarea));
-  // }
-
-
-
 
   function agregarImagenes($id_producto, $imagenes){
     if($imagenes){

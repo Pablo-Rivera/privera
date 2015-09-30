@@ -154,3 +154,9 @@ th{
   cursor: inherit;
   display: block;
 }
+#tituloP{
+  font-size: 30px;
+}
+td img{
+  width: 75%;
+}

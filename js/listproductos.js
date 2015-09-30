@@ -27,6 +27,10 @@ $(document).ready(function(){
 			      contentType : false,
 			      processData : false,
             success: function(){
+							$('#dropcat').val(0);
+							$('#nombre').val('');
+							$('#descripcion').val('');
+							$('#precio').val('');
 							cargarProductos('productos');
             },
             error:function(){

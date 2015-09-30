@@ -1,4 +1,7 @@
 <?php
+  include_once 'configuracion/config_app.php';
+  include_once 'configuracion/config_admin.php';
+
   include_once 'vista/nav_vista.php';
   include_once 'modelo/productos_modelo.php';
   class NavControlador{
@@ -14,14 +17,12 @@
     $this->vista->mostrar($accion);
   }
 
-  function mostrarAdmin($accion){
-    if ($accion === "productos"||$accion==="verporductos")
-    {
+  function mostrarAdminProd($accion){
       $this->vista->mostrarAdminProd($accion,$this->modelo->getProductos());
-    }
-    else {
+  }
+
+  function mostrarAdminCat($accion){
       $this->vista->mostrarAdminCat($accion,$this->modelo->getCategorias());
-    }
   }
 
   function agregarProducto(){
@@ -31,7 +32,6 @@
       else{
         $this->vista->mostrarError('La tarea que intenta crear esta vacia');
       }
-      $this->mostrarAccionNav("productos");
     }
 
     function agregarCategoria(){
@@ -43,13 +43,9 @@
     function agregarImagenes(){
     if(isset($_REQUEST['id_task']) && isset($_FILES["imagesToUpload2"])){
       $this->modelo->agregarImagenes($_REQUEST['id_task'],$_FILES["imagesToUpload2"]);
-      echo '{ "result" :  "OK" }';
     }else{
       echo '{ "result" :  "Faltan paramentros" }';
     }
-  }
-  function listarProductoNav($accion){
-    $this->mostrarAdmin($accion);
   }
   function verProducto($accion){
       if(isset($_REQUEST['id_producto'])){

@@ -9,6 +9,7 @@ $(document).ready(function(){
 			      contentType : false,
 			      processData : false,
             success: function(){
+                $("#categoriai").val('');
                 cargarcat('categorias');
                 cargardrop('dropcat');
             },
