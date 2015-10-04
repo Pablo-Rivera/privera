@@ -7,7 +7,7 @@
         {$atributo}
       </ul>
     {elseif $key === "imagenes" }
-      <ul class="list-group-item col-sm-6 col-sm-offset-3">
+      <ul class="list-group-item col-sm-8 col-sm-offset-2">
         {foreach $atributo as $imagen}
           <img class="col-sm-4"src="{$imagen}" alt="no se cargo imagen" />
         {/foreach}

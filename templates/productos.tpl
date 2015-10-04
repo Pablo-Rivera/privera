@@ -21,8 +21,8 @@
       {/if}
     {/foreach}
     <a class="glyphicon glyphicon-trash eliminar" href="{$producto['id_producto']}"></a>
-    <button class="btn btn-primary ver" value="{$producto.id_producto}"type="button" name="ver">Ver</button>
-    <a class="glyphicon glyphicon-plus botonAgregarImagenes" href="{$producto['id_producto']}"></a>
+    <a class="glyphicon glyphicon-eye-open ver" href="{$producto['id_producto']}"></a>
+    <a class="glyphicon glyphicon-picture botonAgregarImagenes" href="{$producto['id_producto']}"></a>
   </ul>
 {/foreach}
 

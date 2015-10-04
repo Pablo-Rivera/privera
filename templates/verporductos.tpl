@@ -16,7 +16,7 @@
           {if $key === "imagenes" }
             <td class="col-sm-2">
               <img src="{$atributo}" alt="no se cargo imagen" />
-              <button class="btn btn-primary ver" value="{$producto.id_producto}"type="button" name="ver">Ver</button>
+              <a class="glyphicon glyphicon-eye-open ver" href="{$producto['id_producto']}"></a>
             </td>
           {elseif $key === "descripcion"}
             <td class="col-sm-3">

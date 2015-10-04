@@ -1,3 +1,29 @@
+<?php /* Smarty version 3.1.27, created on 2015-10-04 23:58:31
+         compiled from "C:\xampp\htdocs\Web 2\privera\templates\adminproduc.tpl" */ ?>
+<?php
+/*%%SmartyHeaderCode:176025611a107cf6c97_52028585%%*/
+if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '7583920535e07740a0d67227e0a6d95bf5a9d8de' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\Web 2\\privera\\templates\\adminproduc.tpl',
+      1 => 1443745222,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '176025611a107cf6c97_52028585',
+  'has_nocache_code' => false,
+  'version' => '3.1.27',
+  'unifunc' => 'content_5611a107d33d29_71764125',
+),false);
+/*/%%SmartyHeaderCode%%*/
+if ($_valid && !is_callable('content_5611a107d33d29_71764125')) {
+function content_5611a107d33d29_71764125 ($_smarty_tpl) {
+
+$_smarty_tpl->properties['nocache_hash'] = '176025611a107cf6c97_52028585';
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -70,9 +96,20 @@
      </div>
     </div>
 
-    <script src="js/jquery-1.11.3.js"></script>
-    <script src="js/listproductos.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/dropcat.js"></script>
+    <?php echo '<script'; ?>
+ src="js/jquery-1.11.3.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="js/listproductos.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="js/bootstrap.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="js/dropcat.js"><?php echo '</script'; ?>
+>
   </body>
 </html>
+<?php }
+}
+?>

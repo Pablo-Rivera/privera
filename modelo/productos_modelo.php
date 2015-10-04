@@ -116,7 +116,7 @@ class ProductosModelo {
       }
     }
   }
-
+  
   function eliminarProducto($idproducto){
     $consultaimg = $this->db->prepare('DELETE FROM imagen WHERE fk_id_producto=?');
     $consultaimg->execute(array($idproducto));

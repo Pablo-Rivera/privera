@@ -41,7 +41,7 @@
 		}
 
     function agregarImagenes(){
-    if(isset($_REQUEST['id_producto']) && isset($_FILES["imagesToUpload2"])){
+    if(isset($_REQUEST['id_task']) && isset($_FILES["imagesToUpload2"])){
       $this->modelo->agregarImagenes($_REQUEST['id_task'],$_FILES["imagesToUpload2"]);
     }else{
       echo '{ "result" :  "Faltan paramentros" }';
@@ -52,13 +52,11 @@
         $this->vista->mostrarProducto($accion,$this->modelo->getProducto($_REQUEST['id_producto']));
       }
   }
-
   function eliminarProducto(){
     if(isset($_REQUEST['id_producto'])){
       $this->modelo->eliminarProducto($_REQUEST['id_producto']);
     }
   }
-
-
+  
   }
  ?>

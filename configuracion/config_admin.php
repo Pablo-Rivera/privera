@@ -9,9 +9,8 @@
     public static $ADMIN_ADD_PROD = 'agregar_producto';
     public static $ADMIN_ADD_CAT = 'agregar_categoria';
     public static $ADMIN_ADD_IMG = 'agregar_imagenes';
-    public static $ADMIN_PRODUCTO = 'verproducto';
+    public static $ADMIN_PRODUCTO = 'verproducto';    
     public static $ADMIN_ELIMINAR_PROD = 'eliminar_prod';
-
 
   }
  ?>
