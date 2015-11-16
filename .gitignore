@@ -1,2 +1,3 @@
 # Ignores
-/templates_c
+templates_c/*
+uploads/*
