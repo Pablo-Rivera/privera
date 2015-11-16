@@ -1,5 +1,5 @@
 <?php
-require_once 'modelo/base_modelo.php';
+require_once 'base_modelo.php';
 class ProductosModelo extends BaseModelo{
   private $productos;
 

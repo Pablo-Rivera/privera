@@ -1,18 +1,11 @@
 <?php
-require_once 'modelo/base_modelo.php';
+require_once 'base_modelo.php';
 class CategoriaModelo extends BaseModelo{
-  private $categorias;
 
   function getCategorias(){
-    $this->categorias = array();
-    $categoria='';
     $consultacat = $this->db->prepare("SELECT * FROM categoria ORDER BY id_categoria");
     $consultacat->execute();
-    //Todas las categorias
-    while($categoria = $consultacat->fetch(PDO::FETCH_ASSOC)) {
-      $this->categorias[]=$categoria;
-    }
-    return $this->categorias;
+    return $consultacat->fetchAll(PDO::FETCH_ASSOC);//Todas las categorias
   }
 
   function getNomCategoria($id_categoria){

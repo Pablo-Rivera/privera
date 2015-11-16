@@ -16,9 +16,6 @@
       if($_REQUEST[ConfigAdmin::$ADMIN]===ConfigAdmin::$ADMIN_PRODUCTOS ){
         $adminControler->mostrarAdminProd($_REQUEST[ConfigAdmin::$ADMIN]);
       }
-      elseif($_REQUEST[ConfigAdmin::$ADMIN]=== ConfigAdmin::$ADMIN_DROPDAW || $_REQUEST[ConfigAdmin::$ADMIN]===ConfigAdmin::$ADMIN_CATEGORIAS) {
-        $adminControler->mostrarAdminCat($_REQUEST[ConfigAdmin::$ADMIN]);
-      }
       elseif($_REQUEST[ConfigAdmin::$ADMIN]===ConfigAdmin::$ADMIN_ADD_PROD) {
         $adminControler->agregarProducto();
       }

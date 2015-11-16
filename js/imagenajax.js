@@ -1,7 +1,5 @@
 $(document).ready(function(){
   var id_prod = '';
-  function AjaxImagenes(formData){
-  };
 
   $(".botonAgregarImagenes").on("click", function(event){
     event.preventDefault();

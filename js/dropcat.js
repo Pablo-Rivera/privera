@@ -4,7 +4,7 @@ $(document).ready(function(){
     event.preventDefault();
         $.ajax({
             url: "index.php?admin=agregar_categoria",
-            type: "post",
+            type: "POST",
             data: new FormData(this),
 			      contentType : false,
 			      processData : false,
@@ -20,40 +20,36 @@ $(document).ready(function(){
 
   });
 
-	function cargardrop(seccion){
-		$.ajax({
-			type: "GET",
-			dataType: "html",
-			url: 'index.php?admin=' + seccion,
-			success: function(data){
-				$("#dropcat").html(data);
-			},
-			error: function(){
-				alert("error");
-			}
-		})
+  function crearDropdownCategoria(categoria) {//crea el componente html del dropdown por categoria
+    $.ajax({ url: 'js/templates/dropcat.mst',
+       success: function(template) {
+         var rendered = Mustache.render(template, categoria);
+         $('#dropcat').append(rendered);
+        }
+      });
+  }
+
+  function crearListCategoria(categoria) { //crea la lista de categorias
+    $.ajax({ url: 'js/templates/categorias.mst',
+       success: function(template) {
+         var rendered = Mustache.render(template, categoria);
+         $('#categoria').append(rendered);
+        }
+      });
+  }
+
+	function cargarcategorias(){
+    $.ajax( "api/categorias" )
+    .done(function(categorias) {
+      for(var key in categorias) {
+        crearDropdownCategoria(categorias[key]);
+        crearListCategoria(categorias[key]);
+      }
+    })
+    .fail(function() {
+        $('#dropcat').append('<li>Imposible cargar las Categorias</li>');
+        $('#categoria').append('<li>Imposible cargar la lista de Categorias</li>');
+    });
 	}
-
-  function cargarcat(seccion){
-		$.ajax({
-			type: "GET",
-			dataType: "html",
-			url: 'index.php?admin=' + seccion,
-			success: function(data){
-				$("#categoria").html(data);
-			},
-			error: function(){
-				alert("error");
-			}
-		})
-	}
-
-	cargardrop('dropcat');
-  cargarcat('categorias');
-	// $("#nuevacat").on("click",function(event){
-	// 	event.preventDefault();
-	// 	cargardrop('dropcat');
-  //   cargarcat('categorias');
-	// })
-
+  cargarcategorias();
 });

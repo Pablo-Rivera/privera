@@ -23,6 +23,7 @@
 
       <div class="col-sm-3 catadmin">
         <div  id="categoria">
+          <label class="control-label" for="nombre">Categorias</label>
           <!-- lista las categorias -->
         </div>
         <form id="formcat">
@@ -56,6 +57,7 @@
              <div class="col-sm-12">
               <div class="form-group col-sm-2">
   					    <select id="dropcat" name="dropcat">
+                    <option value="0">Categorias</option>
                     <!-- categorias -->
         				</select>
         		  </div><br>
@@ -73,6 +75,7 @@
     <script src="js/jquery-1.11.3.js"></script>
     <script src="js/listproductos.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.1.3/mustache.js"></script>
     <script src="js/dropcat.js"></script>
   </body>
 </html>

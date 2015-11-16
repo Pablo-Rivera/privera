@@ -12,6 +12,6 @@
   function __construct(){
     $this->vista = new NavVista();
   }
-  
+
   }
  ?>

@@ -32,6 +32,6 @@
     $this->smarty->assign('producto', $producto);
     $this->mostrar($accion);
   }
-  
+
 }
  ?>

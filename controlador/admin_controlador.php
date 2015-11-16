@@ -15,10 +15,6 @@
       $this->vista->mostrarAdminProd($accion,$this->productos->getProductos());
   }
 
-  function mostrarAdminCat($accion){
-      $this->vista->mostrarAdminCat($accion,$this->categorias->getCategorias());
-  }
-
   function agregarProducto(){
     if(isset($_REQUEST['dropcat']) && isset($_REQUEST['nombre']) && isset($_REQUEST['descripcion']) && isset($_REQUEST['precio']) && isset($_FILES['imagesToUpload'])){
         $this->productos->agregarProducto($_REQUEST['dropcat'], $_REQUEST['nombre'], $_REQUEST['descripcion'], $_REQUEST['precio'], $_FILES['imagesToUpload']);
