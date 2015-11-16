@@ -1,28 +1,10 @@
 <?php
-class ProductosModelo {
+require_once 'modelo/base_modelo.php';
+class ProductosModelo extends BaseModelo{
   private $productos;
-  private $categorias;
-  private $db;
-
-  function __construct() {
-      $this->db = new PDO('mysql:host=localhost;dbname=web2;charset=utf8', 'root', '');
-      $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  }
-
-  function getCategorias(){
-    $categorias = array();
-    $categoria='';
-    $consultacat = $this->db->prepare("SELECT * FROM categoria ORDER BY id_categoria");
-    $consultacat->execute();
-    //Todas las categorias
-    while($categoria = $consultacat->fetch(PDO::FETCH_ASSOC)) {
-      $categorias[]=$categoria;
-    }
-    return $categorias;
-  }
 
   function getProductos(){
-    $productos = array();
+    $this->productos = array();
     $producto='';
     $consultaprod = $this->db->prepare("SELECT * FROM producto ORDER BY id_producto");
     $consultaprod->execute();
@@ -37,9 +19,9 @@ class ProductosModelo {
       $consultaImagen->execute(array($producto['id_producto']));
       $imagenes = $consultaImagen->fetch();//SOLO SE PUEDE UNA CATEGORA POR PRODUCTO POR ESO EL 0
       $producto["imagenes"]=$imagenes["path"];
-      $productos[]=$producto;
+      $this->productos[]=$producto;
     }
-    return $productos;
+    return $this->productos;
   }
 
   private function subirImagenes($imagenes){
@@ -94,19 +76,6 @@ class ProductosModelo {
     return $producto;
   }
 
-  function agregarCategoria($categoria){
-    if(strlen($categoria) > 4){
-      try{
-        $this->db->beginTransaction();
-        $queryInsert = $this->db->prepare('INSERT INTO categoria(nombre) VALUES(?)');
-        $queryInsert->execute(array($categoria));
-        $this->db->commit();
-      } catch(Exception $e){
-        $this->db->rollBack();
-      }
-    }
-  }
-
   function agregarImagenes($id_producto, $imagenes){
     if($imagenes){
       $rutas=$this->subirImagenes($imagenes);
@@ -116,7 +85,7 @@ class ProductosModelo {
       }
     }
   }
-  
+
   function eliminarProducto($idproducto){
     $consultaimg = $this->db->prepare('DELETE FROM imagen WHERE fk_id_producto=?');
     $consultaimg->execute(array($idproducto));

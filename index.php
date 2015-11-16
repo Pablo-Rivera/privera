@@ -3,49 +3,51 @@
   include_once 'configuracion/config_admin.php';
 
   include_once 'controlador/nav_controlador.php';
+  include_once 'controlador/admin_controlador.php';
 
 
   $navControler = new NavControlador();
+  $adminControler = new AdminControlador();
 
   if(!array_key_exists(ConfigApp::$NAV,$_REQUEST))
   {
     if(array_key_exists(ConfigAdmin::$ADMIN,$_REQUEST))//Acciones del administrador
     {
       if($_REQUEST[ConfigAdmin::$ADMIN]===ConfigAdmin::$ADMIN_PRODUCTOS ){
-        $navControler->mostrarAdminProd($_REQUEST[ConfigAdmin::$ADMIN]);
+        $adminControler->mostrarAdminProd($_REQUEST[ConfigAdmin::$ADMIN]);
       }
       elseif($_REQUEST[ConfigAdmin::$ADMIN]=== ConfigAdmin::$ADMIN_DROPDAW || $_REQUEST[ConfigAdmin::$ADMIN]===ConfigAdmin::$ADMIN_CATEGORIAS) {
-        $navControler->mostrarAdminCat($_REQUEST[ConfigAdmin::$ADMIN]);
+        $adminControler->mostrarAdminCat($_REQUEST[ConfigAdmin::$ADMIN]);
       }
       elseif($_REQUEST[ConfigAdmin::$ADMIN]===ConfigAdmin::$ADMIN_ADD_PROD) {
-        $navControler->agregarProducto();
+        $adminControler->agregarProducto();
       }
       elseif ($_REQUEST[ConfigAdmin::$ADMIN]===ConfigAdmin::$ADMIN_ADD_CAT){
-        $navControler->agregarCategoria();
+        $adminControler->agregarCategoria();
       }
       elseif ($_REQUEST[ConfigAdmin::$ADMIN]===ConfigAdmin::$ADMIN_ADD_IMG) {
-        $navControler->agregarImagenes();
+        $adminControler->agregarImagenes();
       }
       elseif ($_REQUEST[ConfigAdmin::$ADMIN]===ConfigAdmin::$ADMIN_ELIMINAR_PROD) {
-        $navControler->eliminarProducto();
+        $adminControler->eliminarProducto();
       }
       elseif ($_REQUEST[ConfigAdmin::$ADMIN]===ConfigAdmin::$ADMIN_PRODUCTO) {
-        $navControler->verProducto($_REQUEST[ConfigAdmin::$ADMIN]);
+        $adminControler->verProducto($_REQUEST[ConfigAdmin::$ADMIN]);
       }
     }
     else{
-      $navControler->mostrarAccionNav(ConfigApp::$NAV_DEFAULT);
+      $navControler->mostrarAccion(ConfigApp::$NAV_DEFAULT);
     }
   }
-  elseif ($_REQUEST[ConfigApp::$NAV]===ConfigAdmin::$ADMIN){
-    $navControler->mostrarAccionNav(ConfigApp::$NAV_ADMIN);
+  elseif ($_REQUEST[ConfigApp::$NAV]===ConfigAdmin::$ADMIN){//nav=admin
+    $navControler->mostrarAccion(ConfigApp::$NAV_ADMIN);//va a la pagina administracion
   }
   elseif (ConfigApp::$NAV_VER_PROD===$_REQUEST[ConfigApp::$NAV]){
     $navControler->mostrarAdminProd(ConfigApp::$NAV_VER_PROD);
   }
   else
   {
-    $navControler->mostrarAccionNav($_REQUEST[ConfigApp::$NAV]);
+    $navControler->mostrarAccion($_REQUEST[ConfigApp::$NAV]);//juego postre sabores encargues contactos
   }
 
 
