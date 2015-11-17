@@ -2,22 +2,27 @@ $(document).ready(function(){
 
   $("#formcat").submit(function(event){
     event.preventDefault();
-        $.ajax({
-            url: "index.php?admin=agregar_categoria",
-            type: "POST",
-            data: new FormData(this),
-			      contentType : false,
-			      processData : false,
-            success: function(){
-                $("#categoriai").val('');
-                cargarcat('categorias');
-                cargardrop('dropcat');
-            },
-            error:function(){
-                alert("failure");
-            }
+    var nombreCat=$('#categoriaf').val();
+    if(nombreCat.length >4){
+      $.ajax(
+          {
+            method: "POST",
+            url: "api/categoria",
+            data: { categoria: nombreCat }
+          })
+        .done(function(idCategoria) {
+          categoria = {id_categoria:idCategoria, nombre:nombreCat};
+          crearDropdownCategoria(categoria);
+          crearListCategoria(categoria);
+          $('#categoriaf').val('');
+        })
+        .fail(function(data) {
+          $('#categoria').append('<li>Imposible agregar la tarea</li>');
         });
-
+    }
+    else{
+      $('#categoria').append('<li>nombre muy corto</li>');
+    }
   });
 
   function crearDropdownCategoria(categoria) {//crea el componente html del dropdown por categoria
@@ -39,7 +44,7 @@ $(document).ready(function(){
   }
 
 	function cargarcategorias(){
-    $.ajax( "api/categorias" )
+    $.ajax( "api/categoria" )
     .done(function(categorias) {
       for(var key in categorias) {
         crearDropdownCategoria(categorias[key]);
@@ -51,5 +56,25 @@ $(document).ready(function(){
         $('#categoria').append('<li>Imposible cargar la lista de Categorias</li>');
     });
 	}
+
+  function borrarCategoria(idcategoria){
+    $.ajax(
+      {
+        method: "DELETE",
+        url: "api/categoria/" + idcategoria
+      })
+    .done(function() {
+       $('#categoria'+idcategoria).remove();
+       $('#dropdown'+idcategoria).remove();
+    })
+    .fail(function() {
+        alert('Imposible borrar la tarea');
+    });
+  }
+
+  $('body').on('click', 'a.eliminar', function() {
+    var idcategoria = this.getAttribute('idcategoria');
+    borrarCategoria(idcategoria);
+  });
   cargarcategorias();
 });

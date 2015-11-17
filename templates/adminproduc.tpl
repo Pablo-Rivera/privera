@@ -29,7 +29,7 @@
         <form id="formcat">
           <div class="form-group col-sm-12">
             <label for="task">Categoria</label>
-            <input type="text" class="form-control" id="categoriai" name="categoria" placeholder="Categoria">
+            <input type="text" class="form-control" id="categoriaf" name="categoria" placeholder="Categoria">
           </div>
           <button type="submit" id="nuevacat"class="btn btn-primary">Agregar</button>
         </form>
@@ -72,10 +72,10 @@
      </div>
     </div>
 
+    <script src="js/mustache.js"></script>
     <script src="js/jquery-1.11.3.js"></script>
     <script src="js/listproductos.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.1.3/mustache.js"></script>
     <script src="js/dropcat.js"></script>
   </body>
 </html>

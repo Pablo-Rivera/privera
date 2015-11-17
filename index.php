@@ -19,9 +19,6 @@
       elseif($_REQUEST[ConfigAdmin::$ADMIN]===ConfigAdmin::$ADMIN_ADD_PROD) {
         $adminControler->agregarProducto();
       }
-      elseif ($_REQUEST[ConfigAdmin::$ADMIN]===ConfigAdmin::$ADMIN_ADD_CAT){
-        $adminControler->agregarCategoria();
-      }
       elseif ($_REQUEST[ConfigAdmin::$ADMIN]===ConfigAdmin::$ADMIN_ADD_IMG) {
         $adminControler->agregarImagenes();
       }

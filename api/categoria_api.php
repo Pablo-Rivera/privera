@@ -2,7 +2,7 @@
 require_once 'api_base.php';
 require_once '../modelo/categoria_modelo.php';
 
-class TareaApi extends ApiBase {
+class CategoriaApi extends ApiBase {
   private $model;
 
   function __construct($request){
@@ -10,16 +10,16 @@ class TareaApi extends ApiBase {
     $this->categorias = new CategoriaModelo();
   }
 
-  function categorias(){
+  function categoria(){
     switch ($this->method) {
       case 'GET': // consultar
         return $this->categorias->getCategorias();
         break;
-      // case 'DELETE': // eliminar
-      //   if(count($this->args) > 0) return $this->categoria->borrarTarea($this->args[0]);
-      //   break;
+      case 'DELETE': // eliminar
+        if(count($this->args) > 0) return $this->categorias->eliminarCategoria($this->args[0]);
+        break;
       case 'POST':  //guardar
-        if(isset($_POST['categoria'])) return $this->categoria->agregarCategoria($_POST['categoria']);
+        if(isset($_POST['categoria'])) return $this->categorias->agregarCategoria($_POST['categoria']);
         break;
       // case 'PUT': // modificar
       //   if(count($this->args) > 0) return $this->categoria->realizarTarea($this->args[0]);

@@ -21,13 +21,30 @@ class CategoriaModelo extends BaseModelo{
         $this->db->beginTransaction();
         $queryInsert = $this->db->prepare('INSERT INTO categoria(nombre) VALUES(?)');
         $queryInsert->execute(array($categoria));
+        $ultimoId=$this->db->lastInsertId();
         $this->db->commit();
+        return $ultimoId;
       }
-      catch(Exception $e)
-      {
+      catch(Exception $e){
         $this->db->rollBack();
       }
     }
   }
+
+  function eliminarCategoria($idcategoria){
+    $consultaProd= $this->db->prepare("SELECT 1 FROM producto where fk_id_categoria=?");
+    $consultaProd->execute(array($idcategoria));
+    $existeProd=$consultaProd->fetch();
+    if(!$existeProd)
+    {
+      $consulta = $this->db->prepare('DELETE FROM categoria WHERE id_categoria=?');
+      $consulta->execute(array($idcategoria));
+    }
+    if($consulta->rowCount() > 0)
+      return 'Categoria Borrada';
+    else
+      return 'No se Borro';
+  }
+
 }
 ?>

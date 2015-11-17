@@ -1,9 +1,9 @@
-<ul class="list-group col-sm-12">
+<ul class="list-group col-sm-12" id="categoria{{id_categoria}}">
   <ul class="list-group-item col-sm-1 col-sm-offset-1">
     {{id_categoria}}
   </ul>
-
-  <ul class="list-group-item col-sm-6 col-sm-offset-1">
+  <ul class="list-group-item col-sm-5 col-sm-offset-1">
     {{nombre}}
   </ul>
+  <a class="glyphicon glyphicon-trash eliminar" idcategoria="{{id_categoria}}"></a>
 </ul>

@@ -24,12 +24,6 @@
     }
   }
 
-  function agregarCategoria(){
-    if(isset($_REQUEST['categoria'])){
-      $this->categorias->agregarCategoria($_REQUEST['categoria']);
-    }
-  }
-
   function agregarImagenes(){
     if(isset($_REQUEST['id_task']) && isset($_FILES["imagesToUpload2"])){
       $this->productos->agregarImagenes($_REQUEST['id_task'],$_FILES["imagesToUpload2"]);
