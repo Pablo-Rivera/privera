@@ -72,6 +72,22 @@ $(document).ready(function(){
     });
   }
 
+  function modificarCategoria(idcategoria,nombre){
+    $.ajax(
+      {
+        method: "PUT",
+        url: "api/categoria/" + idcategoria,
+        dataType: "json",
+        data:{"nombre": nombre}
+      })
+    .done(function() {
+       alert("sesss");
+    })
+    .fail(function() {
+        alert('Imposible modificar la tarea');
+    });
+  }
+
   $('body').on('click', 'a.eliminar', function() {
     var idcategoria = this.getAttribute('idcategoria');
     borrarCategoria(idcategoria);
@@ -81,6 +97,7 @@ $(document).ready(function(){
     var idcategoria = this.getAttribute('idcategoria');
     borrarCategoria(idcategoria);
   });
-  
+
   cargarcategorias();
+  modificarCategoria("20","cambiarnombre");
 });

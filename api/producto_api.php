@@ -22,8 +22,7 @@ class ProductoApi extends ApiBase {
         if(isset($_POST['categoria'])) return $this->categorias->agregarCategoria($_POST['categoria']);
         break;
       case 'PUT': // modificar
-        var_dump($this->data);
-        if(count($this->args) > 0) return $this->categorias->modificarCategoria($this->args[0]);
+        if(count($this->args) > 0) return $this->categorias->modificarCategoria($this->args[0],$this->data->nombre);
         break;
       default:
             return 'Verbo no soportado';
