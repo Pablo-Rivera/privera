@@ -6,4 +6,5 @@
     {{nombre}}
   </ul>
   <a class="glyphicon glyphicon-trash eliminar" idcategoria="{{id_categoria}}"></a>
+  <a class="glyphicon glyphicon-edit modificar" idcatm="{{id_categoria}}"></a>
 </ul>

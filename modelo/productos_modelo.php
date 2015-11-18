@@ -64,10 +64,12 @@ class ProductosModelo extends BaseModelo{
     $consultaprod = $this->db->prepare("SELECT * FROM producto where id_producto=?");
     $consultaprod->execute(array($id_producto));
     $producto=$consultaprod->fetch(PDO::FETCH_ASSOC);
+    
     $consultaCategoria= $this->db->prepare("SELECT nombre FROM categoria where id_categoria=?");
     $consultaCategoria->execute(array($producto['fk_id_categoria']));
     $nombre_categoria = $consultaCategoria->fetch(PDO::FETCH_ASSOC);
     $producto["fk_id_categoria"]=$nombre_categoria["nombre"];
+
     $consultaImagen= $this->db->prepare("SELECT path FROM imagen where fk_id_producto=?");
     $consultaImagen->execute(array($producto['id_producto']));
     while($imagen = $consultaImagen->fetch(PDO::FETCH_ASSOC)) {

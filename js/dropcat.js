@@ -76,5 +76,11 @@ $(document).ready(function(){
     var idcategoria = this.getAttribute('idcategoria');
     borrarCategoria(idcategoria);
   });
+
+  $('body').on('click', 'a.eliminar', function() {
+    var idcategoria = this.getAttribute('idcategoria');
+    borrarCategoria(idcategoria);
+  });
+  
   cargarcategorias();
 });

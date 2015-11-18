@@ -2,7 +2,7 @@
 require_once 'api_base.php';
 require_once '../modelo/categoria_modelo.php';
 
-class CategoriaApi extends ApiBase {
+class ProductoApi extends ApiBase {
   private $model;
 
   function __construct($request){

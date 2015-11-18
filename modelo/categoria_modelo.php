@@ -31,6 +31,23 @@ class CategoriaModelo extends BaseModelo{
     }
   }
 
+  function modificarCategoria($idcategoria,$nombre){
+    if(strlen($nombre) > 4)
+    {
+      try{
+        $this->db->beginTransaction();
+        $queryUpdate = $this->db->prepare('UPDATE categoria SET nombre=? WHERE id_categoria=?');
+        $queryUpdate->execute(array($nombre,$idcategoria));
+        $ultimoId=$this->db->lastInsertId();
+        $this->db->commit();
+        return $ultimoId;
+      }
+      catch(Exception $e){
+        $this->db->rollBack();
+      }
+    }
+  }
+
   function eliminarCategoria($idcategoria){
     $consultaProd= $this->db->prepare("SELECT 1 FROM producto where fk_id_categoria=?");
     $consultaProd->execute(array($idcategoria));
