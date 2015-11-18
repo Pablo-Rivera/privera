@@ -13,7 +13,11 @@ class CategoriaApi extends ApiBase {
   function categoria(){
     switch ($this->method) {
       case 'GET': // consultar
-        return $this->categorias->getCategorias();
+        if(count($this->args) < 1){
+          return $this->categorias->getCategorias();
+        }else {
+          return $this->categorias->getNomCategoria($this->args[0]);
+        }
         break;
       case 'DELETE': // eliminar
         if(count($this->args) > 0) return $this->categorias->eliminarCategoria($this->args[0]);

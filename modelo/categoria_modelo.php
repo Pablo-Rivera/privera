@@ -38,12 +38,12 @@ class CategoriaModelo extends BaseModelo{
         $this->db->beginTransaction();
         $queryUpdate = $this->db->prepare('UPDATE categoria SET nombre=? WHERE id_categoria=?');
         $queryUpdate->execute(array($nombre,$idcategoria));
-        $ultimoId=$this->db->lastInsertId();
         $this->db->commit();
-        return $ultimoId;
+        return 'Categoria modificada';
       }
       catch(Exception $e){
         $this->db->rollBack();
+        return 'No se  modifico la categoria';
       }
     }
   }

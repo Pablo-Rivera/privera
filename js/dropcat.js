@@ -1,5 +1,5 @@
 $(document).ready(function(){
-
+  var idcategoria=0;
   $("#formcat").submit(function(event){
     event.preventDefault();
     var nombreCat=$('#categoriaf').val();
@@ -72,13 +72,14 @@ $(document).ready(function(){
     });
   }
 
-  function modificarCategoria(idcategoria,nombre){
+  function modificarCategoria(idcategoria,nombrecat){
+    var categoria={nombre: nombrecat};
     $.ajax(
       {
         method: "PUT",
         url: "api/categoria/" + idcategoria,
         dataType: "json",
-        data:{"nombre": nombre}
+        data: JSON.stringify(categoria)
       })
     .done(function() {
        alert("sesss");
@@ -93,11 +94,27 @@ $(document).ready(function(){
     borrarCategoria(idcategoria);
   });
 
-  $('body').on('click', 'a.eliminar', function() {
-    var idcategoria = this.getAttribute('idcategoria');
-    borrarCategoria(idcategoria);
+  $('body').on('click', 'a.modificar', function() {
+    idcategoria = this.getAttribute('idcatm');
+    $.ajax( "api/categoria/"+idcategoria )
+    .done(function(nombre) {
+        $('#updatecat').val(nombre);
+    })
+    .fail(function() {
+        alert("no se pudo obtener nombre categoria");
+    });
+  });
+
+  $("#nuevoNombreCat").on("click", function(event){
+    event.preventDefault();
+    var nuevonombre=$('#updatecat').val();
+    if(nuevonombre.length > 4){
+      modificarCategoria(idcategoria,nuevonombre)
+    }
+
   });
 
   cargarcategorias();
-  modificarCategoria("20","cambiarnombre");
+  //modificarCategoria("20","cambiarnombre");
+
 });
