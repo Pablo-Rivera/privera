@@ -23,7 +23,6 @@ $(document).ready(function(){
     });
 	}
 
-  cargarProductos();
 
   $("#formprod").submit(function(event){
     event.preventDefault();
@@ -45,6 +44,27 @@ $(document).ready(function(){
                 alert("failure");
             }
         });
-
   });
+
+	function borrarProducto(idproducto){
+		$.ajax(
+			{
+				method: "DELETE",
+				url: "api/producto/" + idproducto
+			})
+		.done(function() {
+			 $('#producto'+idproducto).remove();
+		})
+		.fail(function() {
+				alert('Imposible borrar el producto');
+		});
+  };
+
+	$('#productos').on('click', 'a.eliminarp', function() {
+		var idprod = this.getAttribute('idprode');
+		borrarProducto(idprod);
+	});
+
+  cargarProductos();
+
 });

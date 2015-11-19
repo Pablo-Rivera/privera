@@ -16,7 +16,7 @@ class ProductoApi extends ApiBase {
         return $this->productos->getProductos();
         break;
       case 'DELETE': // eliminar
-        if(count($this->args) > 0) return $this->productos->eliminarCategoria($this->args[0]);
+        if(count($this->args) > 0) return $this->productos->eliminarProducto($this->args[0]);
         break;
       case 'POST':  //guardar
         if(isset($_POST['categoria'])) {

@@ -88,10 +88,19 @@ class ProductosModelo extends BaseModelo{
   }
 
   function eliminarProducto($idproducto){
-    $consultaimg = $this->db->prepare('DELETE FROM imagen WHERE fk_id_producto=?');
-    $consultaimg->execute(array($idproducto));
-    $consulta = $this->db->prepare('DELETE FROM producto WHERE id_producto=?');
-    $consulta->execute(array($idproducto));
+    try{
+      $this->db->beginTransaction();
+      $consultaimg = $this->db->prepare('DELETE FROM imagen WHERE fk_id_producto=?');
+      $consultaimg->execute(array($idproducto));
+      $consulta = $this->db->prepare('DELETE FROM producto WHERE id_producto=?');
+      $consulta->execute(array($idproducto));
+      $this->db->commit();
+      return 'producto borrado';
+    }
+    catch(Exception $e){
+      $this->db->rollBack();
+      return 'No se  pudo borrar el producto';
+    }
   }
 
 }
