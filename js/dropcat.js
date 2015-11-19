@@ -17,7 +17,7 @@ $(document).ready(function(){
           $('#categoriaf').val('');
         })
         .fail(function(data) {
-          $('#categoria').append('<li>Imposible agregar la tarea</li>');
+          $('#categoria').append('<li>Imposible agregar la categoria</li>');
         });
     }
     else{
@@ -27,20 +27,22 @@ $(document).ready(function(){
 
   function crearDropdownCategoria(categoria) {//crea el componente html del dropdown por categoria
     $.ajax({ url: 'js/templates/dropcat.mst',
-       success: function(template) {
-         var rendered = Mustache.render(template, categoria);
-         $('#dropcat').append(rendered);
-        }
-      });
+      async:false,
+      success: function(template) {
+        var rendered = Mustache.render(template, categoria);
+        $('#dropcat').append(rendered);
+      }
+    });
   }
 
   function crearListCategoria(categoria) { //crea la lista de categorias
     $.ajax({ url: 'js/templates/categorias.mst',
-       success: function(template) {
-         var rendered = Mustache.render(template, categoria);
-         $('#categoria').append(rendered);
-        }
-      });
+      async:false,
+      success: function(template) {
+       var rendered = Mustache.render(template, categoria);
+       $('#categoria').append(rendered);
+      }
+    });
   }
 
 	function cargarcategorias(){
@@ -68,7 +70,7 @@ $(document).ready(function(){
        $('#dropdown'+idcategoria).remove();
     })
     .fail(function() {
-        alert('Imposible borrar la tarea');
+        alert('Imposible borrar la categoria');
     });
   }
 
@@ -82,19 +84,20 @@ $(document).ready(function(){
         data: JSON.stringify(categoria)
       })
     .done(function() {
-       alert("sesss");
+      $('#nombre'+idcategoria).html(nombrecat);// remplazar
+      $('#dropdown'+idcategoria).html(nombrecat);
     })
     .fail(function() {
-        alert('Imposible modificar la tarea');
+        alert('Imposible modificar la categoria');
     });
   }
 
-  $('body').on('click', 'a.eliminar', function() {
+  $('#categoria').on('click', 'a.eliminar', function() {
     var idcategoria = this.getAttribute('idcategoria');
     borrarCategoria(idcategoria);
   });
 
-  $('body').on('click', 'a.modificar', function() {
+  $('#categoria').on('click', 'a.modificar', function() {
     idcategoria = this.getAttribute('idcatm');
     $.ajax( "api/categoria/"+idcategoria )
     .done(function(nombre) {

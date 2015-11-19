@@ -82,7 +82,7 @@
          <input id="updatecat" name="name" value="">
          <div class="modal-footer">
            <button type="button" class="btn btn-default" data-dismiss="modal">Salir</button>
-           <button type="button" class="btn btn-primary" id="nuevoNombreCat" name="nuevoNombreCat">Guardar cambio</button>
+           <button type="button" class="btn btn-primary" id="nuevoNombreCat" name="nuevoNombreCat" data-dismiss="modal">Guardar cambio</button>
          </div>
        </div>
      </div>
