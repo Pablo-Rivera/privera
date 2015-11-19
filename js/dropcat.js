@@ -36,7 +36,7 @@ $(document).ready(function(){
   }
 
   function crearListCategoria(categoria) { //crea la lista de categorias
-    $.ajax({ url: 'js/templates/categorias.mst',
+    $.ajax({ url: 'js/templates/categoria.mst',
       async:false,
       success: function(template) {
        var rendered = Mustache.render(template, categoria);
@@ -92,12 +92,12 @@ $(document).ready(function(){
     });
   }
 
-  $('#categoria').on('click', 'a.eliminar', function() {
+  $('#categoria').on('click', 'a.eliminarc', function() {
     var idcategoria = this.getAttribute('idcategoria');
     borrarCategoria(idcategoria);
   });
 
-  $('#categoria').on('click', 'a.modificar', function() {
+  $('#categoria').on('click', 'a.modificarc', function() {
     idcategoria = this.getAttribute('idcatm');
     $.ajax( "api/categoria/"+idcategoria )
     .done(function(nombre) {

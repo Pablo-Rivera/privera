@@ -5,6 +5,6 @@
   <ul class="list-group-item col-sm-5 col-sm-offset-1" id="nombre{{id_categoria}}">
     {{nombre}}
   </ul>
-  <a class="glyphicon glyphicon-trash eliminar" idcategoria="{{id_categoria}}"></a>
-  <a class="glyphicon glyphicon-edit modificar" data-toggle="modal" data-target="#myModal" idcatm="{{id_categoria}}"></a>
+  <a class="glyphicon glyphicon-trash eliminarc" idcategoria="{{id_categoria}}"></a>
+  <a class="glyphicon glyphicon-edit modificarc" data-toggle="modal" data-target="#myModal" idcatm="{{id_categoria}}"></a>
 </ul>

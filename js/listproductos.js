@@ -1,21 +1,29 @@
 
 $(document).ready(function(){
 
-	function cargarProductos(seccion){
-		$.ajax({
-			type: "GET",
-			dataType: "html",
-			url: 'index.php?admin=' + seccion,
-			success: function(data){
-				$("#productos").html(data);
-			},
-			error: function(){
-				alert("error");
+	function crearListProducto(producto) { //crea la lista de productos
+		$.ajax({ url: 'js/templates/producto.mst',
+			async:false,
+			success: function(template) {
+			 var rendered = Mustache.render(template, producto);
+			 $('#productos').append(rendered);
 			}
-		})
+		});
 	}
 
-  cargarProductos('productos');
+	function cargarProductos(){
+		$.ajax( "api/producto" )
+    .done(function(productos) {
+      for(var key in productos) {
+        crearListProducto(productos[key]);
+      }
+    })
+    .fail(function() {
+        $('#dropcat').append('<li>Imposible cargar las Categorias</li>');
+    });
+	}
+
+  cargarProductos();
 
   $("#formprod").submit(function(event){
     event.preventDefault();

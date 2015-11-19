@@ -1,9 +1,11 @@
 <?php
 require_once 'base_modelo.php';
+require_once 'categoria_modelo.php';
 class ProductosModelo extends BaseModelo{
   private $productos;
 
   function getProductos(){
+    $categoria=new CategoriaModelo();
     $this->productos = array();
     $producto='';
     $consultaprod = $this->db->prepare("SELECT * FROM producto ORDER BY id_producto");
@@ -11,13 +13,10 @@ class ProductosModelo extends BaseModelo{
     //Todas los productos
     while($producto = $consultaprod->fetch(PDO::FETCH_ASSOC))// PDO::FETCH_ASSOC trae un array indexado por nombre columna
     {
-      $consultaCategoria= $this->db->prepare("SELECT nombre FROM categoria where id_categoria=?");
-      $consultaCategoria->execute(array($producto['fk_id_categoria']));
-      $nombre_categoria = $consultaCategoria->fetch();//SOLO SE PUEDE UNA CATEGORA POR PRODUCTO POR ESO EL 0
-      $producto["fk_id_categoria"]=$nombre_categoria["nombre"];
+      $producto["fk_id_categoria"]=$categoria->getNomCategoria($producto['fk_id_categoria']);
       $consultaImagen= $this->db->prepare("SELECT path FROM imagen where fk_id_producto=?");
       $consultaImagen->execute(array($producto['id_producto']));
-      $imagenes = $consultaImagen->fetch();//SOLO SE PUEDE UNA CATEGORA POR PRODUCTO POR ESO EL 0
+      $imagenes = $consultaImagen->fetch();
       $producto["imagenes"]=$imagenes["path"];
       $this->productos[]=$producto;
     }
@@ -64,7 +63,7 @@ class ProductosModelo extends BaseModelo{
     $consultaprod = $this->db->prepare("SELECT * FROM producto where id_producto=?");
     $consultaprod->execute(array($id_producto));
     $producto=$consultaprod->fetch(PDO::FETCH_ASSOC);
-    
+
     $consultaCategoria= $this->db->prepare("SELECT nombre FROM categoria where id_categoria=?");
     $consultaCategoria->execute(array($producto['fk_id_categoria']));
     $nombre_categoria = $consultaCategoria->fetch(PDO::FETCH_ASSOC);

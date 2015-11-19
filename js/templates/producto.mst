@@ -1,0 +1,23 @@
+<ul class="list-group col-sm-12">
+  <ul class="list-group-item col-sm-1">
+    {{id_producto}}
+  </ul>
+  <ul class="list-group-item col-sm-1">
+    {{fk_id_categoria}}
+  </ul>
+  <ul class="list-group-item col-sm-2">
+    {{nombre}}
+  </ul>
+  <ul class="list-group-item col-sm-4">
+    {{descripcion}}
+  </ul>
+  <ul class="list-group-item col-sm-1">
+    {{precio}}
+  </ul>
+  <ul class="list-group-item col-sm-2">
+    <img src="{{imagenes}}" alt="no se cargo imagen" />
+  </ul>
+  <a class="glyphicon glyphicon-trash eliminarp" href="{{id_producto}}"></a>
+  <a class="glyphicon glyphicon-eye-open ver" href="{{id_producto}}"></a>
+  <a class="glyphicon glyphicon-picture botonAgregarImagenes" href="{{id_producto}}"></a>
+</ul>

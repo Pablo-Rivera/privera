@@ -10,7 +10,7 @@ class ProductoApi extends ApiBase {
     $this->productos = new ProductosModelo();
   }
 
-  function categoria(){
+  function producto(){
     switch ($this->method) {
       case 'GET': // consultar
         return $this->productos->getProductos();

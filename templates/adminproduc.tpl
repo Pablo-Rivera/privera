@@ -36,7 +36,8 @@
       </div>
 
       <div class="conteiner col-sm-9" id="productos">
-          <!-- lista de productos -->
+          <label class="control-label" for="nombre">Productos</label>
+          <!-- Lista los productos -->
       </div>
 
       <div class="row col-sm-9">
@@ -93,5 +94,6 @@
     <script src="js/listproductos.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/dropcat.js"></script>
+    <script src="js/imagenajax.js"></script>
   </body>
 </html>
