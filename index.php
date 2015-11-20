@@ -26,7 +26,7 @@
         $adminControler->eliminarProducto();
       }
       elseif ($_REQUEST[ConfigAdmin::$ADMIN]===ConfigAdmin::$ADMIN_PRODUCTO) {
-        $adminControler->verProducto($_REQUEST[ConfigAdmin::$ADMIN]);
+        $adminControler->verProducto(ConfigAdmin::$ADMIN_PRODUCTO);
       }
     }
     else{

@@ -1,5 +1,33 @@
-
 $(document).ready(function(){
+	var id_prod = '';
+
+  $(".botonAgregarImagenes").on("click", function(event){
+    event.preventDefault();
+    id_prod=event.target.href;
+    var posbarra=id_prod.lastIndexOf("/");
+    id_prod = id_prod.substr(posbarra+1);
+    $('#imagesToUpload2').click();
+  });
+
+  $("#imagesToUpload2").on("change", function(event){
+    event.preventDefault();
+    $('#imgAjax').submit();
+  });
+
+  $("#imgAjax").on("submit", function(event){
+    event.preventDefault();
+    $.ajax({
+      type: "POST",
+      url:"index.php?admin=agregar_imagenes&id_task=" + id_prod,
+      data: new FormData(this),
+      contentType : false,
+      processData : false,
+      error: function(){
+        alert("No anduvo la llamada AJAX");
+      },
+    });
+  });
+
 
 	function crearListProducto(producto) { //crea la lista de productos
 		$.ajax({ url: 'js/templates/producto.mst',
@@ -9,6 +37,21 @@ $(document).ready(function(){
 			 $('#productos').append(rendered);
 			}
 		});
+	}
+	function cargarProducto(seccion){
+		$.ajax({
+			type: "GET",
+			dataType: "html",
+			url: 'index.php?admin=' + seccion+'&id_producto='+ id_prod,
+			success: function(data){
+				$("#productos").html(data);
+				$("#cuerpo").html(data);
+
+			},
+			error: function(){
+				alert("error");
+			}
+		})
 	}
 
 	function cargarProductos(){
@@ -34,9 +77,8 @@ $(document).ready(function(){
       processData : false,
 		})
 		.done(function(prod) {
-			var producto={fk_id_categoria:prod["fk_id_categoria"],id_producto:prod["id_producto"], nombre:prod["nombre"],
-			descripcion:prod["descripcion"],precio:prod["precio"],imagenes:prod["imagenes"][0]};
-			crearListProducto(producto);
+			prod["imagenes"]=prod["imagenes"][0];
+			crearListProducto(prod);
 			$('#dropcat').val(0);
 			$('#nombre').val('');
 			$('#descripcion').val('');
@@ -45,25 +87,6 @@ $(document).ready(function(){
 		.fail(function() {
 			$('#productos').append('<li>Imposible agregar el Producto</li>');
 		});
-
-
-    // $.ajax({
-    //     url: "index.php?admin=agregar_producto",
-    //     type: "post",
-    //     data: new FormData(this),
-	  //     contentType : false,
-	  //     processData : false,
-    //     success: function(){
-		// 			$('#dropcat').val(0);
-		// 			$('#nombre').val('');
-		// 			$('#descripcion').val('');
-		// 			$('#precio').val('');
-		// 			cargarProductos('productos');
-    //     },
-    //     error:function(){
-    //         alert("failure");
-    //     }
-    // });
   });
 
 	function borrarProducto(idproducto){
@@ -83,6 +106,11 @@ $(document).ready(function(){
 	$('#productos').on('click', 'a.eliminarp', function() {
 		var idprod = this.getAttribute('idprode');
 		borrarProducto(idprod);
+	});
+
+	$('#productos').on('click',"a.ver",function(){
+    id_prod=this.getAttribute('idprodv');
+		cargarProducto('verproducto');
 	});
 
   cargarProductos();
