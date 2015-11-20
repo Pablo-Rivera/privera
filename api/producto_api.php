@@ -19,8 +19,8 @@ class ProductoApi extends ApiBase {
         if(count($this->args) > 0) return $this->productos->eliminarProducto($this->args[0]);
         break;
       case 'POST':  //guardar
-        if(isset($_POST['categoria'])) {
-          return $this->productos->agregarProducto($_POST['idcategoria'], $_POST['nombre'], $_POST['descripcion'], $_POST['precio'], $_FILES['imagesToUpload']);
+        if(isset($_POST['dropcat']) && isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['precio']) && isset($_FILES['imagesToUpload'])) {
+          return $this->productos->agregarProducto($_POST['dropcat'], $_POST['nombre'], $_POST['descripcion'], $_POST['precio'], $_FILES['imagesToUpload']);
         }
         break;
       case 'PUT': // modificar

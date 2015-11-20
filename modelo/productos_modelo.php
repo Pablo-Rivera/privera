@@ -24,22 +24,21 @@ class ProductosModelo extends BaseModelo{
   }
 
   private function subirImagenes($imagenes){
-      $carpeta = "uploads/imagenes/";
-      $destinos_finales = array();
-      foreach ($imagenes["tmp_name"] as $key => $value) {
-        $destinos_finales[] = $carpeta.uniqid().$imagenes["name"][$key];
-        move_uploaded_file($value, end($destinos_finales));
-      }
-
-      return $destinos_finales;
+    $carpeta = "uploads/imagenes/";
+    $destinos_finales = array();
+    foreach ($imagenes["tmp_name"] as $key => $value) {
+      $destinos_finales[] = $carpeta.uniqid().$imagenes["name"][$key];
+      move_uploaded_file($value, "../".end($destinos_finales));
+    }
+    return $destinos_finales;
     }
 
   function agregarProducto($idcategoria, $nombre, $descripcion, $precio, $imagenes){
     if($idcategoria && $nombre && $descripcion && $precio && $imagenes["name"][0]){//$imagenes["name"][0] me fijo si hay nombre asignado
       try{
+        $this->db->beginTransaction();
         $destinos_finales=$this->subirImagenes($imagenes);
     //Inserto la tarea
-        $this->db->beginTransaction();
         $consulta = $this->db->prepare('INSERT INTO producto(fk_id_categoria, nombre, descripcion, precio) VALUES(?,?,?,?)');
         $consulta->execute(array($idcategoria, $nombre, $descripcion, $precio));
         $id_producto = $this->db->lastInsertId();
@@ -49,13 +48,15 @@ class ProductosModelo extends BaseModelo{
           $consulta->execute(array($id_producto, $value));
         }
         $this->db->commit();
-
+        return $this->getProducto($id_producto);
       }
-        catch(Exception $e){
-
-          $this->db->rollBack();
+      catch(Exception $e){
+        $this->db->rollBack();
+        return 'No se  pudo agregar el producto';
       }
     }
+    else
+      return "no se pudo agregar el producto faltan campos";
   }
 
   function getProducto($id_producto){

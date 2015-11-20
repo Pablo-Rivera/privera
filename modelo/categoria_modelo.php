@@ -27,6 +27,7 @@ class CategoriaModelo extends BaseModelo{
       }
       catch(Exception $e){
         $this->db->rollBack();
+        return 'No se agrego la categoria';
       }
     }
   }
