@@ -110,12 +110,11 @@
   float: right;
 }
 
-
-.botonAgregarImagenes, .modificar, .eliminarc, .eliminarp, .ver{
+.botonAgregarImagenes, .modificarc, .eliminarc, .eliminarp, .ver{
   text-decoration: none;
   color: #f6f6f6;
 }
-.botonAgregarImagenes:hover,.modificar:hover, .eliminarc:hover, .eliminarp:hover, .ver:hover{
+.botonAgregarImagenes:hover,.modificarc:hover, .eliminarc:hover, .eliminarp:hover, .ver:hover{
   text-decoration: none;
   color: #d400d9;
 }

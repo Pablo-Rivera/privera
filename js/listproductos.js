@@ -1,31 +1,26 @@
 $(document).ready(function(){
 	var id_prod = '';
 
-  $(".botonAgregarImagenes").on("click", function(event){
-    event.preventDefault();
-    id_prod=event.target.href;
-    var posbarra=id_prod.lastIndexOf("/");
-    id_prod = id_prod.substr(posbarra+1);
+  $('#productos').on('click','a.botonAgregarImagenes', function(){
+    id_prod = this.getAttribute('idprodi');
     $('#imagesToUpload2').click();
   });
 
-  $("#imagesToUpload2").on("change", function(event){
-    event.preventDefault();
-    $('#imgAjax').submit();
-  });
-
   $("#imgAjax").on("submit", function(event){
-    event.preventDefault();
-    $.ajax({
-      type: "POST",
-      url:"index.php?admin=agregar_imagenes&id_task=" + id_prod,
-      data: new FormData(this),
-      contentType : false,
-      processData : false,
-      error: function(){
-        alert("No anduvo la llamada AJAX");
-      },
-    });
+		event.preventDefault();
+		$.ajax({
+			method: "POST",
+			url: "api/producto/img/"+id_prod,
+			data: new FormData(this),
+			contentType : false,
+			processData : false,
+		})
+		.done(function() {
+
+		})
+		.fail(function() {
+			$('#productos').append('<li>Imposible agregar el Producto</li>');
+		});
   });
 
 
@@ -38,20 +33,37 @@ $(document).ready(function(){
 			}
 		});
 	}
-	function cargarProducto(seccion){
-		$.ajax({
-			type: "GET",
-			dataType: "html",
-			url: 'index.php?admin=' + seccion+'&id_producto='+ id_prod,
-			success: function(data){
-				$("#productos").html(data);
-				$("#cuerpo").html(data);
 
-			},
-			error: function(){
-				alert("error");
+	function crearImagen(imagen){
+		$.ajax({ url: 'js/templates/imagen.mst',
+			async:false,
+			success: function(template) {
+			 var rendered = Mustache.render(template, imagen);
+			 $('#imgprod').append(rendered);
+		 }
+		});
+	}
+
+	function crearProducto(producto){
+		$.ajax({ url: 'js/templates/ProdCompleto.mst',
+			success: function(template) {
+			 var rendered = Mustache.render(template, producto);
+			 $('#productos').html(rendered);
+			 for(var img in producto["imagenes"]) {
+				 crearImagen(producto["imagenes"][img]);
 			}
-		})
+		}
+		});
+	}
+
+	function cargarProducto(idproducto){
+		$.ajax('api/producto/'+ idproducto)
+		.done(function(producto) {
+      crearProducto(producto);
+    })
+    .fail(function() {
+        $('#productos').append('<li>Imposible cargar las Producto</li>');
+    });
 	}
 
 	function cargarProductos(){
@@ -77,7 +89,7 @@ $(document).ready(function(){
       processData : false,
 		})
 		.done(function(prod) {
-			prod["imagenes"]=prod["imagenes"][0];
+			prod["imagenes"]=prod["imagenes"][0]["path"];
 			crearListProducto(prod);
 			$('#dropcat').val(0);
 			$('#nombre').val('');
@@ -103,14 +115,33 @@ $(document).ready(function(){
 		});
   };
 
+	function borrarimagen(idimg){
+		$.ajax(
+			{
+				method: "DELETE",
+				url: "api/producto/img/" + idimg
+			})
+		.done(function() {
+			 $('#img'+idimg).remove();
+		})
+		.fail(function() {
+				alert('Imposible borrar la imagen');
+		});
+	}
+
 	$('#productos').on('click', 'a.eliminarp', function() {
 		var idprod = this.getAttribute('idprode');
 		borrarProducto(idprod);
 	});
 
+	$('#productos').on('click', 'a.eliminarimg', function() {
+		var idimg = this.getAttribute('idimg');
+		borrarimagen(idimg);
+	});
+
 	$('#productos').on('click',"a.ver",function(){
-    id_prod=this.getAttribute('idprodv');
-		cargarProducto('verproducto');
+    var idprod=this.getAttribute('idprodv');
+		cargarProducto(idprod);
 	});
 
   cargarProductos();

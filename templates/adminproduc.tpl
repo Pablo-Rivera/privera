@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <div class="row col-sm-1 col-sm-offset-11">
+    <div class="row col-xs-1">
       <form id="imgAjax">
-        <input class="col-sm-1 col-sm-offset-11" type="file"  id="imagesToUpload2" name="imagesToUpload2[]" multiple>
+        <input class="col-xs-1" type="file"  id="imagesToUpload2" name="imagesToUpload2[]" multiple/>
       </form>
     </div>
 

@@ -70,10 +70,10 @@ class ProductosModelo extends BaseModelo{
     $nombre_categoria = $consultaCategoria->fetch(PDO::FETCH_ASSOC);
     $producto["fk_id_categoria"]=$nombre_categoria["nombre"];
 
-    $consultaImagen= $this->db->prepare("SELECT path FROM imagen where fk_id_producto=?");
+    $consultaImagen= $this->db->prepare("SELECT * FROM imagen where fk_id_producto=?");
     $consultaImagen->execute(array($producto['id_producto']));
     while($imagen = $consultaImagen->fetch(PDO::FETCH_ASSOC)) {
-				$producto['imagenes'][] = $imagen['path'];
+				$producto['imagenes'][] = $imagen;
 			}
     return $producto;
   }
@@ -88,6 +88,20 @@ class ProductosModelo extends BaseModelo{
     }
   }
 
+  function eliminarImagen($idimagen){
+    try{
+      $this->db->beginTransaction();
+      $consultaimg = $this->db->prepare('DELETE FROM imagen WHERE id_imagen=?');
+      $consultaimg->execute(array($idimagen));
+      $this->db->commit();
+      return 'imagen borrado';
+    }
+    catch(Exception $e){
+      $this->db->rollBack();
+      return 'No se  pudo borrar la imagen';
+    }
+  }
+  
   function eliminarProducto($idproducto){
     try{
       $this->db->beginTransaction();

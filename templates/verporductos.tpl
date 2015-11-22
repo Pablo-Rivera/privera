@@ -1,8 +1,8 @@
 <table class="table  col-sm-10" >
     <thead><!--Titulos de la tabla-->
       <tr class="row">
-        <th class="col-sm-1">Nombre</th>
         <th class="col-sm-1">Categoria</th>
+        <th class="col-sm-1">Nombre</th>
         <th class="col-sm-3">Descripcion</th>
         <th class="col-sm-1">Precio</th>
         <th class="col-sm-2">Imagen</th>

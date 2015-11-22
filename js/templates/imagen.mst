@@ -1,0 +1,4 @@
+<div id="img{{id_imagen}}"class="col-sm-6">
+  <img class="col-sm-10" src="{{path}}" alt="no se cargo imagen" />
+  <a class="glyphicon glyphicon-trash eliminarimg col-sm-1" idimg="{{id_imagen}}"></a>
+</div>

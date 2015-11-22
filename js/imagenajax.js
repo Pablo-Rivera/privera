@@ -1,32 +1,7 @@
 $(document).ready(function(){
   var id_prod = '';
 
-  $(".botonAgregarImagenes").on("click", function(event){
-    event.preventDefault();
-    id_prod=event.target.href;
-    var posbarra=id_prod.lastIndexOf("/");
-    id_prod = id_prod.substr(posbarra+1);
-    $('#imagesToUpload2').click();
-  });
 
-  $("#imagesToUpload2").on("change", function(event){
-    event.preventDefault();
-    $('#imgAjax').submit();
-  });
-
-  $("#imgAjax").on("submit", function(event){
-    event.preventDefault();
-    $.ajax({
-      type: "POST",
-      url:"index.php?admin=agregar_imagenes&id_task=" + id_prod,
-      data: new FormData(this),
-      contentType : false,
-      processData : false,
-      error: function(){
-        alert("No anduvo la llamada AJAX");
-      },
-    });
-  });
 
   function cargarProducto(seccion){
     $.ajax({
