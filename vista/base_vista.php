@@ -14,6 +14,10 @@
     $this->smarty->assign('errores', $this->errores);
     $this->smarty->display($accion .'.tpl');
   }
+  
+  function mostrarError($error){
+    array_push($this->errores, $error);
+  }
 
 }
 ?>

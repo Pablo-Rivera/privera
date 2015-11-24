@@ -14,10 +14,6 @@
     $this->mostrar($accion);
   }
 
-  function mostrarError($error){
-    array_push($this->errores, $error);
-  }
-
   function mostrarProducto($accion,$producto){
     $this->smarty->assign('producto', $producto);
     $this->mostrar($accion);

@@ -20,10 +20,10 @@ class ProductoApi extends ApiBase {
         }
         break;
       case 'DELETE': // eliminar
-        if(count($this->args) < 2){
+        if(count($this->args) > 0 && count($this->args) < 2){
           return $this->productos->eliminarProducto($this->args[0]);
         }
-        else{
+        else if ($this->args[0]==="img"){
           return $this->productos->eliminarImagen($this->args[1]);
         }
         break;
@@ -33,7 +33,6 @@ class ProductoApi extends ApiBase {
             return $this->productos->agregarProducto($_POST['dropcat'], $_POST['nombre'], $_POST['descripcion'], $_POST['precio'], $_FILES['imagesToUpload']);
         }}
         else{
-
           return $this->productos->agregarImagenes($this->args[1], $_FILES['imagesToUpload2']);
         }
         break;

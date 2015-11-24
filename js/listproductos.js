@@ -6,6 +6,11 @@ $(document).ready(function(){
     $('#imagesToUpload2').click();
   });
 
+  $("#imagesToUpload2").on("change", function(event){
+    event.preventDefault();
+    $('#imgAjax').submit();
+  });
+
   $("#imgAjax").on("submit", function(event){
 		event.preventDefault();
 		$.ajax({

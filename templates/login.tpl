@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login de Tareas</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/login.css">
   </head>
 
   <body>
 
     <div class="container">
-      <form id="formLogin"class="form-signin" method="POST" action="index.php?action=login">
+      <form id="formLogin"class="form-signin" method="POST" action="admin.php?action=login">
         <h2 class="form-signin-heading">Acceso</h2>
         <label for="inputEmail" class="sr-only">Email</label>
         <input type="email" id="email" name="email" class="form-control" placeholder="Email" required autofocus>
