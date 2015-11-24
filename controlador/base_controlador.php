@@ -13,5 +13,9 @@
     $this->vista = new NavVista();
   }
 
+  function mostrarAccion($accion){
+    $this->vista->mostrar($accion);
+  }
+  
   }
  ?>

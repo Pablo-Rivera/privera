@@ -138,6 +138,7 @@ $(document).ready(function(){
     id_prod = this.getAttribute('idprom');
     $.ajax( "api/producto/"+id_prod )
     .done(function(producto) {
+				$('#dropcatm').val(producto['id_categoria']);
         $('#updatenombre').val(producto['nombre']);
         $('#updateprecio').val(producto['precio']);
         $('#updatedescripcion').val(producto['descripcion']);
@@ -157,8 +158,7 @@ $(document).ready(function(){
         data: JSON.stringify(producto)
       })
     .done(function(nomcat) {
-      $('#idp'+id_prod).html(id_prod);// remplazar
-			$('#nomcat'+id_prod).html(nomcat);
+			$('#nomcat'+id_prod).html(nomcat);// remplazar
 			$('#nomp'+id_prod).html(nuevonombre);
 			$('#precio'+id_prod).html(nuevoprecio);
 			$('#descrip'+id_prod).html(nuevadescripcion);

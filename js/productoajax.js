@@ -3,7 +3,7 @@ $(document).ready(function(){
     $.ajax({
       type: "GET",
       dataType: "html",
-      url: 'index.php?admin=' + seccion+'&id_producto='+ id_prod,
+      url: 'index.php?nav=' + seccion+'&id_producto='+ id_prod,
       success: function(data){
         $("#productos").html(data);
         $("#cuerpo").html(data);
@@ -19,7 +19,7 @@ $(document).ready(function(){
 		$.ajax({
 			type: "GET",
 			dataType: "html",
-			url: 'index.php?admin=' + seccion,
+			url: 'index.php?nav=' + seccion,
 			success: function(data){
 				$("#productos").html(data);
 			},

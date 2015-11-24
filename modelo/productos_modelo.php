@@ -87,6 +87,7 @@ class ProductosModelo extends BaseModelo{
     $consultaprod->execute(array($id_producto));
     $producto=$consultaprod->fetch(PDO::FETCH_ASSOC);
 
+    $producto["id_categoria"]=$producto["fk_id_categoria"];
     $categoria=new CategoriaModelo();
     $producto["fk_id_categoria"]=$categoria->getNomCategoria($producto['fk_id_categoria']);
 

@@ -3,7 +3,7 @@
 
     public static $NAV = 'nav';
     public static $NAV_DEFAULT = 'inicio';
-    public static $NAV_ADMIN = 'adminproduc';
     public static $NAV_VER_PROD = 'verporductos';
+    public static $NAV_VER_PRODUCTO = 'verproducto';
   }
  ?>

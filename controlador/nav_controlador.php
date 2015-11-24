@@ -7,16 +7,20 @@
     private $adminprod;
 
   function __construct(){
+    $this->productos = new ProductosModelo();
+    $this->categorias = new CategoriaModelo();
+
     parent::__construct();
-    $this->adminprod = new AdminControlador();
   }
 
-  function mostrarAccion($accion){
-    $this->vista->mostrar($accion);
+  function mostrarProductos($accion){
+    $this->vista->mostrarProductos($accion,$this->productos->getProductos());
   }
 
-  function mostrarAdminProd($accion){
-    $this->adminprod->mostrarAdminProd($accion);
+  function  verProducto($accion){
+    if(isset($_REQUEST['id_producto'])){
+      $this->vista->mostrarProducto($accion,$this->productos->getProducto($_REQUEST['id_producto']));
+    }
   }
 
   }

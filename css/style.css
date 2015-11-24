@@ -103,12 +103,7 @@
   transition-property: transform;
   z-index: 9;
 }
-#productos{
-  float: left;
-}
-.catadmin {
-  float: right;
-}
+
 
 .botonAgregarImagenes, .modificarc, .eliminarc, .eliminarp, .ver{
   text-decoration: none;

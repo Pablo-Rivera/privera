@@ -1,25 +1,15 @@
 <?php
   include_once 'libs/Smarty.class.php';
-  class NavVista{
-    private $smarty;
-    private $errores;
+  include_once 'base_vista.php';
 
-  function __construct(){
-    $this->smarty = new Smarty();
-    $this->errores = array();
+  class NavVista extends BaseVista{
 
-  }
-
-  function mostrar($accion){
-    $this->smarty->display($accion .'.tpl');
-  }
-
-  function mostrarAdminProd($accion,$productos){//cuidado con los AJAX
+  function mostrarProductos($accion,$productos){
     $this->smarty->assign('productos', $productos);
     $this->mostrar($accion);
   }
 
-  function mostrarAdminCat($accion,$categorias){//cuidado con los AJAX
+  function mostrarCategorias($accion,$categorias){
     $this->smarty->assign('categorias', $categorias);
     $this->mostrar($accion);
   }
