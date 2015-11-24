@@ -33,12 +33,13 @@ class ProductoApi extends ApiBase {
             return $this->productos->agregarProducto($_POST['dropcat'], $_POST['nombre'], $_POST['descripcion'], $_POST['precio'], $_FILES['imagesToUpload']);
         }}
         else{
-          
+
           return $this->productos->agregarImagenes($this->args[1], $_FILES['imagesToUpload2']);
         }
         break;
       case 'PUT': // modificar
-        if(count($this->args) > 0) return $this->productos->modificarCategoria($this->args[0],$this->data->nombre);
+        if(count($this->args) > 0)
+          return $this->productos->modificarProducto($this->args[0], $this->data->fk_id_categoria, $this->data->nombre, $this->data->descripcion, $this->data->precio);
         break;
       default:
             return 'Verbo no soportado';

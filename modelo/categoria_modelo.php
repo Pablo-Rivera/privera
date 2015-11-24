@@ -47,6 +47,9 @@ class CategoriaModelo extends BaseModelo{
         return 'No se  modifico la categoria';
       }
     }
+    else {
+      return 'Nombre muy corto min long 4';
+    }
   }
 
   function eliminarCategoria($idcategoria){

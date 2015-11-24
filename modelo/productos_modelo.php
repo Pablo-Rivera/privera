@@ -59,16 +59,36 @@ class ProductosModelo extends BaseModelo{
       return "no se pudo agregar el producto faltan campos";
   }
 
+  function modificarProducto($idproducto, $idcategoria, $nombre, $descripcion, $precio){
+    if(strlen($nombre) > 4 && strlen($descripcion) > 1 && $precio > 0)
+    {
+      try{
+        $this->db->beginTransaction();
+        $queryUpdate = $this->db->prepare('UPDATE producto SET fk_id_categoria=?, nombre=?, descripcion=?, precio=? WHERE id_producto=?');
+        $queryUpdate->execute(array($idcategoria, $nombre, $descripcion, $precio, $idproducto));
+        $this->db->commit();
+
+        $categoria=new CategoriaModelo();
+        return $categoria->getNomCategoria($idcategoria);
+      }
+      catch(Exception $e){
+        $this->db->rollBack();
+        return 'No se  modifico el producto';
+      }
+    }
+    else {
+      return 'Campos incorrectos';
+    }
+  }
+
   function getProducto($id_producto){
     $producto='';
     $consultaprod = $this->db->prepare("SELECT * FROM producto where id_producto=?");
     $consultaprod->execute(array($id_producto));
     $producto=$consultaprod->fetch(PDO::FETCH_ASSOC);
 
-    $consultaCategoria= $this->db->prepare("SELECT nombre FROM categoria where id_categoria=?");
-    $consultaCategoria->execute(array($producto['fk_id_categoria']));
-    $nombre_categoria = $consultaCategoria->fetch(PDO::FETCH_ASSOC);
-    $producto["fk_id_categoria"]=$nombre_categoria["nombre"];
+    $categoria=new CategoriaModelo();
+    $producto["fk_id_categoria"]=$categoria->getNomCategoria($producto['fk_id_categoria']);
 
     $consultaImagen= $this->db->prepare("SELECT * FROM imagen where fk_id_producto=?");
     $consultaImagen->execute(array($producto['id_producto']));
@@ -101,7 +121,7 @@ class ProductosModelo extends BaseModelo{
       return 'No se  pudo borrar la imagen';
     }
   }
-  
+
   function eliminarProducto($idproducto){
     try{
       $this->db->beginTransaction();

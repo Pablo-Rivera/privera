@@ -1,9 +1,5 @@
 $(document).ready(function(){
-  var id_prod = '';
-
-
-
-  function cargarProducto(seccion){
+  function cargarProducto(seccion,id_prod){
     $.ajax({
       type: "GET",
       dataType: "html",
@@ -37,10 +33,10 @@ $(document).ready(function(){
 
 	$(".ver").on("click",function(event){
 		event.preventDefault();
-    id_prod=event.target.href;
+    var id_prod=event.target.href;
     var posbarra=id_prod.lastIndexOf("/");
     id_prod = id_prod.substr(posbarra+1);
-		cargarProducto('verproducto');
-	})
+		cargarProducto('verproducto',id_prod);
+	});
 
-  });
+});

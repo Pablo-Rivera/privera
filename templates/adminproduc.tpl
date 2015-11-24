@@ -41,8 +41,8 @@
       </div>
 
       <div class="row col-sm-9">
-         <form id="formprod" >
-           <div class="form-group">
+        <form id="formprod" >
+          <div class="form-group">
              <div class="col-sm-12">
                <label for="task">Producto</label>
              </div>
@@ -56,23 +56,57 @@
                <input type="text" class="form-control" id="precio" name="precio" placeholder="precio">
              </div>
              <div class="col-sm-12">
-              <div class="form-group col-sm-2">
-  					    <select id="dropcat" name="dropcat">
-                    <option value="0">Categorias</option>
-                    <!-- categorias -->
-        				</select>
-        		  </div><br>
+                <div class="form-group col-sm-2">
+    					    <select id="dropcat" name="dropcat">
+                      <option value="0">Categorias</option>
+                      <!-- categorias -->
+          				</select>
+          		  </div><br>
 
-              <span class="file-input btn btn-primary btn-file">
-                Cargar&hellip; <input class="cargar form-group col-sm-1 col-sm-offset-3" type="file"  id="imagesToUpload" name="imagesToUpload[]" multiple/>
-              </span>
+                <span class="file-input btn btn-primary btn-file">
+                  Cargar&hellip; <input class="cargar form-group col-sm-1 col-sm-offset-3" type="file"  id="imagesToUpload" name="imagesToUpload[]" multiple/>
+                </span>
 
-           <button type="submit" id="nuevoproducto" class="btn btn-primary col-sm-2 col-sm-offset-1">Agregar</button>
-         </div>
+                <button type="submit" id="nuevoproducto" class="btn btn-primary col-sm-2 col-sm-offset-1">Agregar</button>
+              </div>
+          </div>
        </form>
+    </div>
+
+<!-- MODAL PRODUCTO -->
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+     <div class="modal-dialog" role="document">
+       <div class="modal-content  col-sm-12">
+          <div class="modal-header col-sm-12">
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+           <h4 class="modal-title" id="myModalLabel">Modifique el Producto:</h4>
+          </div>
+          <div class="modal-body col-sm-12">
+            <div class="form-group col-sm-3">
+              <select id="dropcatm" name="dropcatm">
+                <option value="0">Categorias</option>
+                <!-- categorias -->
+              </select>
+            </div>
+            <div class="col-sm-3  col-sm-offset-1">
+             <input type="text" class="form-control" id="updatenombre" name="nombre" placeholder="nombre">
+            </div>
+            <div class="col-sm-3 col-sm-offset-1">
+             <input type="text" class="form-control" id="updateprecio" name="precio" placeholder="precio">
+            </div>
+            <div class="col-sm-12">
+             <textarea class="form-control" maxlength="254" rows="3" id="updatedescripcion" name="descripcion" placeholder="descripcion"></textarea>
+            </div>
+          </div>
+          <div class="modal-footer col-sm-12">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Salir</button>
+            <button type="button" class="btn btn-primary" id="Prodmodificado" name="Prodmodificado" data-dismiss="modal">Guardar cambios</button>
+          </div>
+       </div>
      </div>
     </div>
-    <!-- MODAL  -->
+
+    <!-- MODAL CATEGORIA -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
      <div class="modal-dialog" role="document">
        <div class="modal-content">
@@ -94,6 +128,5 @@
     <script src="js/listproductos.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/dropcat.js"></script>
-    <script src="js/imagenajax.js"></script>
   </body>
 </html>

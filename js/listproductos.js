@@ -134,6 +134,51 @@ $(document).ready(function(){
 		borrarProducto(idprod);
 	});
 
+	$('#productos').on('click', 'a.modificarp', function() {
+    id_prod = this.getAttribute('idprom');
+    $.ajax( "api/producto/"+id_prod )
+    .done(function(producto) {
+        $('#updatenombre').val(producto['nombre']);
+        $('#updateprecio').val(producto['precio']);
+        $('#updatedescripcion').val(producto['descripcion']);
+    })
+    .fail(function() {
+        alert("no se pudo obtener nombre categoria");
+    });
+  });
+
+	function modificarProducto(nuevonombre,nuevoprecio,nuevadescripcion,nuevacategoria){
+    var producto={fk_id_categoria: nuevacategoria, nombre: nuevonombre, descripcion: nuevadescripcion, precio: nuevoprecio};
+    $.ajax(
+      {
+        method: "PUT",
+        url: "api/producto/" + id_prod,
+        dataType: "json",
+        data: JSON.stringify(producto)
+      })
+    .done(function(nomcat) {
+      $('#idp'+id_prod).html(id_prod);// remplazar
+			$('#nomcat'+id_prod).html(nomcat);
+			$('#nomp'+id_prod).html(nuevonombre);
+			$('#precio'+id_prod).html(nuevoprecio);
+			$('#descrip'+id_prod).html(nuevadescripcion);
+    })
+    .fail(function() {
+        alert('Imposible modificar producto');
+    });
+  }
+
+	$("#Prodmodificado").on("click", function(event){
+    event.preventDefault();
+    var nuevonombre=$('#updatenombre').val();
+    var nuevoprecio=$('#updateprecio').val();
+    var nuevadescripcion=$('#updatedescripcion').val();
+		var nuevacategoria=$('#dropcatm').val();
+    if(nuevonombre.length > 4 && nuevoprecio>0&& nuevadescripcion.length>0){
+      modificarProducto(nuevonombre,nuevoprecio,nuevadescripcion,nuevacategoria)
+    }
+  });
+
 	$('#productos').on('click', 'a.eliminarimg', function() {
 		var idimg = this.getAttribute('idimg');
 		borrarimagen(idimg);

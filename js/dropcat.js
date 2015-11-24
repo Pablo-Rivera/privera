@@ -31,6 +31,7 @@ $(document).ready(function(){
       success: function(template) {
         var rendered = Mustache.render(template, categoria);
         $('#dropcat').append(rendered);
+        $('#dropcatm').append(rendered);
       }
     });
   }
@@ -74,7 +75,7 @@ $(document).ready(function(){
     });
   }
 
-  function modificarCategoria(idcategoria,nombrecat){
+  function modificarCategoria(nombrecat){
     var categoria={nombre: nombrecat};
     $.ajax(
       {
@@ -112,9 +113,8 @@ $(document).ready(function(){
     event.preventDefault();
     var nuevonombre=$('#updatecat').val();
     if(nuevonombre.length > 4){
-      modificarCategoria(idcategoria,nuevonombre)
+      modificarCategoria(nuevonombre)
     }
-
   });
 
   cargarcategorias();

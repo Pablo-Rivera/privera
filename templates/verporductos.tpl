@@ -35,4 +35,4 @@
     <br>
 </table>
 
-<script src="js/imagenajax.js"></script>
+<script src="js/productoajax.js"></script>
