@@ -1,5 +1,5 @@
 <?php
-  include_once 'libs/Smarty.class.php';
+  require_once 'libs/Smarty.class.php';
 
   class BaseVista{
     protected $smarty;
@@ -14,7 +14,7 @@
     $this->smarty->assign('errores', $this->errores);
     $this->smarty->display($accion .'.tpl');
   }
-  
+
   function mostrarError($error){
     array_push($this->errores, $error);
   }

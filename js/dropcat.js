@@ -1,5 +1,4 @@
 $(document).ready(function(){
-  var idcategoria=0;
   $("#formcat").submit(function(event){
     event.preventDefault();
     var nombreCat=$('#categoriaf').val();
@@ -99,7 +98,7 @@ $(document).ready(function(){
   });
 
   $('#categoria').on('click', 'a.modificarc', function() {
-    idcategoria = this.getAttribute('idcatm');
+    var idcategoria = this.getAttribute('idcatm');
     $.ajax( "api/categoria/"+idcategoria )
     .done(function(nombre) {
         $('#updatecat').val(nombre);

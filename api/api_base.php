@@ -9,8 +9,8 @@ abstract class ApiBase{
 
   function __construct($request){
     header("Content-Type: application/json");
-    $this->args = explode('/', rtrim($request, '/')); // tarea/123 [tarea,123]
-    $this->endpoint = array_shift($this->args); //Saca el primer elemento y lo retorna
+    $this->args = explode('/', rtrim($request, '/'));
+    $this->endpoint = array_shift($this->args);
     $this->method = $_SERVER['REQUEST_METHOD'];
     $this->data = json_decode(file_get_contents('php://input'));
   }

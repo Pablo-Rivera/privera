@@ -38,4 +38,35 @@ $(document).ready(function(){
 		cargarnav('verporductos');
 	})
 
+	$("#cuerpo").on("submit",'#formLogin', function(event){
+		event.preventDefault();
+		$.ajax({
+			method: "POST",
+			url: 'admin.php?action=login',
+			data: new FormData(this),
+			contentType : false,
+			processData : false,
+		})
+		.done(function(data) {
+			$('#cuerpo').html(data);
+		})
+		.fail(function() {
+		});
+  });
+
+	$("#administracion").on("click",function(event){
+		event.preventDefault();
+		$.ajax({
+			type: "GET",
+			dataType: "html",
+			url: 'admin.php',
+			success: function(data){
+				$('#cuerpo').html(data);
+			},
+			error: function(){
+				alert("error");
+			}
+		})
+	})
+
 });

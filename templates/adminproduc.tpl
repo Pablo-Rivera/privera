@@ -1,23 +1,8 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <link rel="shortcut icon" href="images/logo.png" type="image/png" />
 
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-    <title>Los Andes</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
-    <div class="row col-xs-1">
-      <form id="imgAjax">
-        <input class="col-xs-1" type="file"  id="imagesToUpload2" name="imagesToUpload2[]" multiple/>
-      </form>
-    </div>
 
-    <div class="col-sm-12">
+    <div class="col-sm-10 col-sm-offset-1">
       <div class="page-header">
+      <span class="pull-right">Hola <strong>{$usuario}</strong>! - <a id="logout">Logout</a></span>
        <h1>Lista de Productos</h1>
       </div>
 
@@ -109,7 +94,7 @@
     </div>
 
     <!-- MODAL CATEGORIA -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal fade" id="myModalC" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
      <div class="modal-dialog" role="document">
        <div class="modal-content">
          <div class="modal-header">
@@ -124,6 +109,11 @@
        </div>
      </div>
     </div>
+        <div class="col-xs-5">
+          <form id="imgAjax">
+            <input class="col-xs-1" type="file"  id="imagesToUpload2" name="imagesToUpload2[]" multiple/>
+          </form>
+        </div>
     <!--  -->
     <script src="js/mustache.js"></script>
     <script src="js/jquery-1.11.3.js"></script>
@@ -131,5 +121,4 @@
 
     <script src="js/listproductos.js"></script>
     <script src="js/dropcat.js"></script>
-  </body>
-</html>
+    <script src="js/login.js"></script>

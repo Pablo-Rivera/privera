@@ -1,5 +1,5 @@
 <?php
-  include_once 'controlador/base_controlador.php';
+  require_once 'controlador/base_controlador.php';
 
   class AdminControlador extends BaseControlador{
     private $productos;
@@ -15,6 +15,10 @@
       header("Location: admin.php?action=login");
       die();
     }
+  }
+
+  function mostrarAdmin($accion){
+      $this->vista->mostrarAdmin($accion,$_SESSION['email']);
   }
 }
 ?>

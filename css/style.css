@@ -104,14 +104,13 @@
   z-index: 9;
 }
 
-
-.botonAgregarImagenes, .modificarc, .eliminarc, .eliminarp, .ver{
+.botonAgregarImagenes, .modificarc, .eliminarc, .eliminarp, .ver, span a{
   text-decoration: none;
   color: #f6f6f6;
 }
-.botonAgregarImagenes:hover,.modificarc:hover, .eliminarc:hover, .eliminarp:hover, .ver:hover{
+.botonAgregarImagenes:hover,.modificarc:hover, .eliminarc:hover, .eliminarp:hover, .ver:hover, span a:hover{
   text-decoration: none;
-  color: #d400d9;
+  color: #000000;
 }
 #updatecat{
   margin-left: 35%;
@@ -119,7 +118,9 @@
 th{
   text-align: center;
 }
-
+td h3{
+  color: #ff0000;
+}
 
 .btn-file {
   position: relative;

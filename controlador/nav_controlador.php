@@ -14,7 +14,11 @@
   }
 
   function mostrarProductos($accion){
-    $this->vista->mostrarProductos($accion,$this->productos->getProductos());
+    if(isset($_REQUEST['id'])){
+      $this->vista->mostrarProductos($accion,$this->productos->getProductos($_REQUEST['id']),$this->categorias->getCategorias());
+    }else {
+      $this->vista->mostrarProductos($accion,$this->productos->getProductos(),$this->categorias->getCategorias());
+    }
   }
 
   function  verProducto($accion){

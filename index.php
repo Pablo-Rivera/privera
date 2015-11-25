@@ -1,7 +1,7 @@
 <?php
-  include_once 'configuracion/config_app.php';
+  require_once 'configuracion/config_app.php';
 
-  include_once 'controlador/nav_controlador.php';
+  require_once 'controlador/nav_controlador.php';
 
 
   $navControler = new NavControlador();

@@ -8,6 +8,7 @@
   <title>Los Andes</title>
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
 
@@ -42,6 +43,7 @@
           <li><a id="juego" href="">Juego</a></li>
           <li><a id="Productos" href="">Productos</a></li>
           <li data-toggle="modal" data-target="#myModal"><a href="#">Contacto</a></li>
+          <li><a id="administracion" href="">Administrador</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">

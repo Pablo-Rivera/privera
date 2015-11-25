@@ -4,12 +4,17 @@ require_once 'categoria_modelo.php';
 class ProductosModelo extends BaseModelo{
   private $productos;
 
-  function getProductos(){
+  function getProductos($id = 0){
     $categoria=new CategoriaModelo();
     $this->productos = array();
     $producto='';
-    $consultaprod = $this->db->prepare("SELECT * FROM producto ORDER BY id_producto");
-    $consultaprod->execute();
+    if($id){
+      $consultaprod = $this->db->prepare("SELECT * FROM producto WHERE fk_id_categoria=? ORDER BY id_producto");
+      $consultaprod->execute(array($id));
+    } else {
+      $consultaprod = $this->db->prepare("SELECT * FROM producto ORDER BY id_producto");
+      $consultaprod->execute();
+    }
     //Todas los productos
     while($producto = $consultaprod->fetch(PDO::FETCH_ASSOC))// PDO::FETCH_ASSOC trae un array indexado por nombre columna
     {

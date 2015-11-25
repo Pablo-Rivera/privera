@@ -5,7 +5,6 @@ $(document).ready(function(){
       dataType: "html",
       url: 'index.php?nav=' + seccion+'&id_producto='+ id_prod,
       success: function(data){
-        $("#productos").html(data);
         $("#cuerpo").html(data);
 
       },
@@ -15,13 +14,14 @@ $(document).ready(function(){
     })
   }
 
-  function cargarProductos(seccion){
+  function cargarProductosxCategoria(idcat){
 		$.ajax({
 			type: "GET",
 			dataType: "html",
-			url: 'index.php?nav=' + seccion,
+			url: 'index.php?nav=verporductos&id=' + idcat,
 			success: function(data){
-				$("#productos").html(data);
+        $("#cuerpo").html(data);
+        $('#id_categoriad').val(idcat);
 			},
 			error: function(){
 				alert("error");
@@ -29,6 +29,10 @@ $(document).ready(function(){
 		})
 	}
 
+  $('#id_categoriad').on('change', function(event){
+  		event.preventDefault();
+  		cargarProductosxCategoria($(this).val());
+  	});
 
 
 	$(".ver").on("click",function(event){
