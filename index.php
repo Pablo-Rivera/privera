@@ -13,6 +13,9 @@
   elseif ($_REQUEST[ConfigApp::$NAV]===ConfigApp::$NAV_VER_PRODUCTO) {
     $navControler->verProducto(ConfigApp::$NAV_VER_PRODUCTO);
   }
+  elseif (ConfigApp::$NAV_MANDAR_MAIL===$_REQUEST[ConfigApp::$NAV]){
+    $navControler->mandarMail();
+  }
   elseif (ConfigApp::$NAV_VER_PROD===$_REQUEST[ConfigApp::$NAV]){
     $navControler->mostrarProductos(ConfigApp::$NAV_VER_PROD);
   }

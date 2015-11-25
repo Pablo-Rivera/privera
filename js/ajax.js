@@ -68,21 +68,22 @@ $(document).ready(function(){
 			}
 		})
 	})
-	$('#formMail').on('submit',function(event){
+
+	$('#enviar').on('click',function(event){
 		var nombre = $( "nombre" ).val();
 		var email = $( "email" ).val();
-		var cuestion = $( "form input:checked" ).val();
+		var cuestion = $( "inconveniente" ).val();
 		var comentario = $( "Comentario" ).val();
 		var datos={nombre:nombre, email:email, cuestion:cuestion, comentario:comentario};
 		$.ajax({
 			type: "POST",
-			dataType: "html",
-			url: 'admin.php',
+			dataType: "JSON",
+			url: 'index.php?nav=mail',
+			data: datos,
 			success: function(data){
-				$('#cuerpo').html(data);
+				alert("AFASFS");
 			},
-			error: function(){
-				alert("error");
+			error: function(data){
 			}
 		})
 	})

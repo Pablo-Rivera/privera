@@ -67,35 +67,30 @@
 
   </div>
 
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content  textmodal">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">Tu comentario nos interesa</h4>
-        </div>
-        <div class="modal-body">
-          <form id="formMail">
-            <div>
-              <label>Tu nombre:</label><br />
-              <input id="nombre" class="input long" name="name" type="text" value=""/><br /><br />
-              <label>Tu email:</label><br />
-              <input id="email" class="input long" name="email" type="text" value=""/><br /><br />
-              <label>Razon:</label><br /><br />
-              <input type="radio" name="razon" value="Horarios" checked="">Horarios atencion<br />
-              <input type="radio" name="razon" value="Queja">Queja<br /><br />
-              <label>Comentario:</label><br />
-              <textarea class="long"name="comentario" id="Comentario" cols="52" rows="10"></textarea>
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+       <div class="modal-dialog" role="document">
+         <div class="modal-content  col-sm-12">
+          <div class="modal-header col-sm-12">
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+           <h4 class="modal-title" id="myModalLabel">Tu comentario nos interesa</h4>
+          </div>
+          <div class="modal-body col-sm-12">
+            <div class="modal-body col-sm-6">
+             <input type="text" class="form-control" id="nombrem" name="nombre" placeholder="Tu nombre"></br>
+             <input type="text" class="form-control" id="email" name="email" placeholder="Email"></br>
+             <input type="text" class="form-control" id="inconveniente" name="inconveniente" placeholder="Horario/Queja"></br>
+             </div>
+            <div class="col-sm-12">
+             <textarea class="form-control" maxlength="254" rows="3" id="Comentario" name="Comentario" placeholder="Comentario"></textarea>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Salir</button>
-              <button type="submit" id="nuevacat"class="btn btn-primary">Enviar Comentario</button>
-            </div>
-          </form>
-        </div>
+          </div>
+          <div class="modal-footer col-sm-12">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Salir</button>
+            <button type="button" class="btn btn-primary" id="enviar" name="modalmail" data-dismiss="modal">Enviar Comentario</button>
+          </div>
+         </div>
+       </div>
       </div>
-    </div>
-  </div>
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-1.11.3.min.js"></script>
