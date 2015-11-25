@@ -17,6 +17,7 @@ class LoginControlador {
       $pass = $this->modelo->getPassword($_REQUEST['email']);
       if(sha1($_REQUEST['password'])==$pass['password']){
         session_start();
+        $_SESSION['tiempo'] = time();
         $_SESSION['email'] = $_REQUEST['email'];
         header("Location: admin.php");
         die();

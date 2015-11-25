@@ -3,10 +3,14 @@ require_once 'categoria_api.php';
 require_once 'producto_api.php';
 
 session_start();
-if (!isset($_SESSION['email'])){
-  header("Location: " . __DIR__ . "../admin.php?action=login");
-  die();
-}else {
+if(isset($_SESSION['tiempo']) ) {
+$vida_session = time() - $_SESSION['tiempo'];
+    if($vida_session > 5)
+    {
+        session_destroy();
+    }
+}
+if (isset($_SESSION['email'])){
   $url_elements = explode('/', rtrim($_REQUEST['parametros'], '/'));
   if(count($url_elements)>0){
     $api_name = ucfirst($url_elements[0]) . 'Api';
@@ -16,7 +20,10 @@ if (!isset($_SESSION['email'])){
         return;
     }
   }
+  echo "No endpoint ".$url_elements[0];
+}
+else {
+  echo "session expirada";
 }
 
-echo "No endpoint ".$url_elements[0];
 ?>
