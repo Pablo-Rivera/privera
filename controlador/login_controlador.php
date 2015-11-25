@@ -18,6 +18,7 @@ class LoginControlador {
       if(sha1($_REQUEST['password'])==$pass['password']){
         session_start();
         $_SESSION['tiempo'] = time();
+        $_SESSION['tiempoExpi']=600;
         $_SESSION['email'] = $_REQUEST['email'];
         header("Location: admin.php");
         die();
@@ -34,7 +35,7 @@ class LoginControlador {
     session_start();
     if(isset($_SESSION['tiempo']) ) {
     $vida_session = time() - $_SESSION['tiempo'];
-        if($vida_session > 20)
+        if($vida_session > $_SESSION['tiempoExpi'])
         {
             session_destroy();
         }

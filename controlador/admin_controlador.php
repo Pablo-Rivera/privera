@@ -16,7 +16,7 @@
       die();
     }else {
       $vida_session = time() - $_SESSION['tiempo'];
-      if($vida_session > 20)
+      if($vida_session > $_SESSION['tiempoExpi'])
       {
           session_destroy();
       }

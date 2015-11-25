@@ -68,5 +68,23 @@ $(document).ready(function(){
 			}
 		})
 	})
+	$('#formMail').on('submit',function(event){
+		var nombre = $( "nombre" ).val();
+		var email = $( "email" ).val();
+		var cuestion = $( "form input:checked" ).val();
+		var comentario = $( "Comentario" ).val();
+		var datos={nombre:nombre, email:email, cuestion:cuestion, comentario:comentario};
+		$.ajax({
+			type: "POST",
+			dataType: "html",
+			url: 'admin.php',
+			success: function(data){
+				$('#cuerpo').html(data);
+			},
+			error: function(){
+				alert("error");
+			}
+		})
+	})
 
 });

@@ -5,7 +5,7 @@ require_once 'producto_api.php';
 session_start();
 if(isset($_SESSION['tiempo']) ) {
 $vida_session = time() - $_SESSION['tiempo'];
-    if($vida_session > 20)
+    if($vida_session > $_SESSION['tiempoExpi'])
     {
         session_destroy();
     }
@@ -23,7 +23,7 @@ if (isset($_SESSION['email'])){
   echo "No endpoint ".$url_elements[0];
 }
 else {
-  header("HTTP/1.1 " . 203 . " " . "session expirada");
+  header("HTTP/1.1 " . 403 . " " . "session expirada");
   echo  "session expirada";
 }
 

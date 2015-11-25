@@ -75,23 +75,23 @@
           <h4 class="modal-title" id="myModalLabel">Tu comentario nos interesa</h4>
         </div>
         <div class="modal-body">
-          <form>
+          <form id="formMail">
             <div>
               <label>Tu nombre:</label><br />
-              <input class="input long" name="name" type="text" value=""/><br /><br />
+              <input id="nombre" class="input long" name="name" type="text" value=""/><br /><br />
               <label>Tu email:</label><br />
-              <input class="input long" name="email" type="text" value=""/><br /><br />
+              <input id="email" class="input long" name="email" type="text" value=""/><br /><br />
               <label>Razon:</label><br /><br />
-              <input type="radio" name="razon" value="Horarios">Horarios atencion<br />
+              <input type="radio" name="razon" value="Horarios" checked="">Horarios atencion<br />
               <input type="radio" name="razon" value="Queja">Queja<br /><br />
               <label>Comentario:</label><br />
-              <textarea class="long"name="comentario" id="" cols="52" rows="10"></textarea>
+              <textarea class="long"name="comentario" id="Comentario" cols="52" rows="10"></textarea>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Salir</button>
+              <button type="submit" id="nuevacat"class="btn btn-primary">Enviar Comentario</button>
             </div>
           </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Salir</button>
-          <button type="button" class="btn btn-default">Enviar Comentario</button>
         </div>
       </div>
     </div>

@@ -1,4 +1,6 @@
 $(document).ready(function(){
+  var idcategoria =0;
+
   $("#formcat").submit(function(event){
     event.preventDefault();
     var nombreCat=$('#categoriaf').val();
@@ -91,7 +93,6 @@ $(document).ready(function(){
       $('#dropdown'+idcategoria).html(nombrecat);
     })
     .fail(function() {
-      $('#administracion').click();
       alert('Imposible modificar la categoria');
     });
   }
@@ -102,13 +103,12 @@ $(document).ready(function(){
   });
 
   $('#categoria').on('click', 'a.modificarc', function() {
-    var idcategoria = this.getAttribute('idcatm');
+    idcategoria = this.getAttribute('idcatm');
     $.ajax( "api/categoria/"+idcategoria )
     .done(function(nombre) {
         $('#updatecat').val(nombre);
     })
     .fail(function() {
-      $('#administracion').click();
       alert("no se pudo obtener nombre categoria");
     });
   });
@@ -117,7 +117,7 @@ $(document).ready(function(){
     event.preventDefault();
     var nuevonombre=$('#updatecat').val();
     if(nuevonombre.length > 4){
-      modificarCategoria(nuevonombre)
+      modificarCategoria(nuevonombre);
     }
   });
 
