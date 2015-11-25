@@ -67,7 +67,7 @@ $(document).ready(function(){
       crearProducto(producto);
     })
     .fail(function() {
-        $('#productos').append('<li>Imposible cargar las Producto</li>');
+      $('#productos').append('<li>Imposible cargar el Producto</li>');
     });
 	}
 
@@ -79,7 +79,7 @@ $(document).ready(function(){
       }
     })
     .fail(function() {
-        $('#productos').append('<li>Imposible cargar los Productos</li>');
+      $('#productos').append('<li>Imposible cargar los Productos</li>');
     });
 	}
 
@@ -116,7 +116,7 @@ $(document).ready(function(){
 			 $('#producto'+idproducto).remove();
 		})
 		.fail(function() {
-				alert('Imposible borrar el producto');
+			alert('Imposible borrar el producto');
 		});
   };
 
@@ -129,8 +129,8 @@ $(document).ready(function(){
 		.done(function() {
 			 $('#img'+idimg).remove();
 		})
-		.fail(function() {
-				alert('Imposible borrar la imagen');
+		.fail(function(data) {
+			alert('Imposible borrar la imagen');
 		});
 	}
 
@@ -149,7 +149,7 @@ $(document).ready(function(){
         $('#updatedescripcion').val(producto['descripcion']);
     })
     .fail(function() {
-        alert("no se pudo obtener nombre categoria");
+      alert("no se pudo obtener nombre categoria");
     });
   });
 
@@ -169,7 +169,7 @@ $(document).ready(function(){
 			$('#descrip'+id_prod).html(nuevadescripcion);
     })
     .fail(function() {
-        alert('Imposible modificar producto');
+      alert('Imposible modificar producto');
     });
   }
 

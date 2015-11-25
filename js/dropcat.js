@@ -16,6 +16,7 @@ $(document).ready(function(){
           $('#categoriaf').val('');
         })
         .fail(function(data) {
+          $('#administracion').click();
           $('#categoria').append('<li>Imposible agregar la categoria</li>');
         });
     }
@@ -54,6 +55,7 @@ $(document).ready(function(){
       }
     })
     .fail(function() {
+        $('#administracion').click();
         $('#dropcat').append('<li>Imposible cargar las Categorias</li>');
         $('#categoria').append('<li>Imposible cargar la lista de Categorias</li>');
     });
@@ -70,7 +72,8 @@ $(document).ready(function(){
        $('#dropdown'+idcategoria).remove();
     })
     .fail(function() {
-        alert('Imposible borrar la categoria');
+      $('#administracion').click();
+      alert('Imposible borrar la categoria');
     });
   }
 
@@ -88,7 +91,8 @@ $(document).ready(function(){
       $('#dropdown'+idcategoria).html(nombrecat);
     })
     .fail(function() {
-        alert('Imposible modificar la categoria');
+      $('#administracion').click();
+      alert('Imposible modificar la categoria');
     });
   }
 
@@ -104,7 +108,8 @@ $(document).ready(function(){
         $('#updatecat').val(nombre);
     })
     .fail(function() {
-        alert("no se pudo obtener nombre categoria");
+      $('#administracion').click();
+      alert("no se pudo obtener nombre categoria");
     });
   });
 

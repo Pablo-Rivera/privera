@@ -30,6 +30,17 @@ class LoginControlador {
     $this->vista->mostrar('login');
   }
 
+  function verificarsession(){
+    session_start();
+    if(isset($_SESSION['tiempo']) ) {
+    $vida_session = time() - $_SESSION['tiempo'];
+        if($vida_session > 20)
+        {
+            session_destroy();
+        }
+    }
+  }
+
   function logout(){
     session_start();
     session_destroy();
